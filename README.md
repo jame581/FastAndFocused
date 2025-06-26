@@ -19,7 +19,8 @@ Software what you need is:
 That's all :)
 
 ## Used Assets
-TBA
+
+- Used font: Awexbmp (https://nimblebeastscollective.itch.io/nb-pixel-font-bundle)
 
 ## Author
 
