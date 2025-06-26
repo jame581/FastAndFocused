@@ -15,6 +15,12 @@ config/version="0.1"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SignalBus="*res://scripts/autoloads/signal_bus.gd"
+SceneChanger="*res://scenes/autoloads/scene_changer.tscn"
+Global="*res://scripts/autoloads/global.gd"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
