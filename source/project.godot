@@ -22,6 +22,11 @@ SignalBus="*res://scripts/autoloads/signal_bus.gd"
 SceneChanger="*res://scenes/autoloads/scene_changer.tscn"
 Global="*res://scripts/autoloads/global.gd"
 
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=360
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

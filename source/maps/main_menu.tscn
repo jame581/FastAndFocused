@@ -26,10 +26,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 25
-theme_override_constants/margin_top = 25
-theme_override_constants/margin_right = 25
-theme_override_constants/margin_bottom = 25
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -45,8 +45,6 @@ size_flags_horizontal = 3
 [node name="RightVBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 4
-theme_override_constants/separation = 75
 alignment = 1
 
 [node name="GameTitle" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/RightVBoxContainer"]
@@ -61,7 +59,7 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
-theme_override_constants/separation = 35
+theme_override_constants/separation = 15
 
 [node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/RightVBoxContainer/MainMenuButtons"]
 custom_minimum_size = Vector2(150, 30)
@@ -81,8 +79,8 @@ text = "Quit"
 [node name="VersionLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/RightVBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 1
+size_flags_vertical = 3
 theme_override_colors/font_color = Color(1, 1, 1, 0.454902)
-text = "(Version: 0.0.0)"
+text = "v0.0"
 horizontal_alignment = 1
 vertical_alignment = 2
