@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=4 uid="uid://cdbkg4q3myof1"]
+[gd_scene load_steps=5 format=4 uid="uid://cdbkg4q3myof1"]
 
 [ext_resource type="Script" uid="uid://drnanpfm6g4lr" path="res://scripts/game/race_level.gd" id="1_0cdes"]
 [ext_resource type="TileSet" uid="uid://bawc2msg3cb35" path="res://resources/race_tileset.tres" id="1_x16n8"]
+[ext_resource type="PackedScene" uid="uid://byyvyp1a0oe30" path="res://scenes/animal.tscn" id="2_eo7ug"]
+[ext_resource type="PackedScene" uid="uid://dt472oed537f2" path="res://scenes/ui/race_ui.tscn" id="4_rk0xo"]
 
 [node name="RaceLevel" type="Node2D"]
 script = ExtResource("1_0cdes")
+animals = Array[PackedScene]([ExtResource("2_eo7ug"), ExtResource("2_eo7ug"), ExtResource("2_eo7ug")])
 
 [node name="TileMaps" type="Node2D" parent="."]
 
@@ -18,3 +21,35 @@ tile_set = ExtResource("1_x16n8")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
+limit_left = 0
+limit_top = 0
+limit_right = 1920
+limit_bottom = 360
+position_smoothing_enabled = true
+
+[node name="StartPoints" type="Node2D" parent="."]
+
+[node name="Position1" type="Node2D" parent="StartPoints"]
+position = Vector2(15, 112)
+
+[node name="Position2" type="Node2D" parent="StartPoints"]
+position = Vector2(15, 144)
+
+[node name="Position3" type="Node2D" parent="StartPoints"]
+position = Vector2(15, 176)
+
+[node name="Position4" type="Node2D" parent="StartPoints"]
+position = Vector2(15, 208)
+
+[node name="Animals" type="Node2D" parent="."]
+
+[node name="UI" type="CanvasLayer" parent="."]
+layer = 128
+
+[node name="RaceUI" parent="UI" instance=ExtResource("4_rk0xo")]
+anchors_preset = 12
+anchor_top = 1.0
+offset_top = -74.0
+grow_vertical = 0
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]

@@ -1,0 +1,98 @@
+[gd_scene load_steps=10 format=3 uid="uid://dt472oed537f2"]
+
+[ext_resource type="Script" uid="uid://bhimsfnru32fe" path="res://scripts/ui/race_ui.gd" id="1_5wmyy"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_5wmyy"]
+device = -1
+keycode = 49
+unicode = 49
+
+[sub_resource type="Shortcut" id="Shortcut_c0jjy"]
+events = [SubResource("InputEventKey_5wmyy")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_c0jjy"]
+device = -1
+keycode = 50
+unicode = 50
+
+[sub_resource type="Shortcut" id="Shortcut_n3tj2"]
+events = [SubResource("InputEventKey_c0jjy")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_n3tj2"]
+device = -1
+keycode = 51
+unicode = 51
+
+[sub_resource type="Shortcut" id="Shortcut_75s7m"]
+events = [SubResource("InputEventKey_n3tj2")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_kxtid"]
+device = -1
+keycode = 52
+unicode = 52
+
+[sub_resource type="Shortcut" id="Shortcut_x2gyh"]
+events = [SubResource("InputEventKey_kxtid")]
+
+[node name="RaceUI" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+script = ExtResource("1_5wmyy")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_constants/separation = 25
+
+[node name="ButtonsContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="StartRaceButton" type="Button" parent="HBoxContainer/ButtonsContainer"]
+layout_mode = 2
+text = "Start race"
+
+[node name="BetButton" type="Button" parent="HBoxContainer/ButtonsContainer"]
+layout_mode = 2
+text = "Bet"
+
+[node name="CameraSwitchContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="SwitchCameraLabel" type="Label" parent="HBoxContainer/CameraSwitchContainer"]
+layout_mode = 2
+text = "Camera"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/CameraSwitchContainer"]
+layout_mode = 2
+
+[node name="Animal1Button" type="Button" parent="HBoxContainer/CameraSwitchContainer/HBoxContainer"]
+layout_mode = 2
+shortcut = SubResource("Shortcut_c0jjy")
+text = "1"
+
+[node name="Animal2Button" type="Button" parent="HBoxContainer/CameraSwitchContainer/HBoxContainer"]
+layout_mode = 2
+shortcut = SubResource("Shortcut_n3tj2")
+text = "2"
+
+[node name="Animal3Button" type="Button" parent="HBoxContainer/CameraSwitchContainer/HBoxContainer"]
+layout_mode = 2
+shortcut = SubResource("Shortcut_75s7m")
+text = "3"
+
+[node name="Animal4Button" type="Button" parent="HBoxContainer/CameraSwitchContainer/HBoxContainer"]
+layout_mode = 2
+shortcut = SubResource("Shortcut_x2gyh")
+text = "4
+"
