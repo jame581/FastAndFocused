@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://b5kfw75mrsexo"]
+[gd_scene load_steps=7 format=3 uid="uid://bsy3tqd8ie6ca"]
 
 [ext_resource type="Script" uid="uid://ccn0bm7nndfow" path="res://scripts/audio_manager.gd" id="1_liach"]
 [ext_resource type="AudioStream" uid="uid://cm035ntj86jpo" path="res://assets/audio/crowd_encouriging.mp3" id="2_3asnw"]
 [ext_resource type="AudioStream" uid="uid://bt7xmjtwidjql" path="res://assets/audio/main_menu.mp3" id="3_3asnw"]
 [ext_resource type="AudioStream" uid="uid://bom7l873vc2cv" path="res://assets/audio/crowd_cheering_win.mp3" id="4_m6ggh"]
+[ext_resource type="AudioStream" uid="uid://v4ran2eqp47i" path="res://assets/audio/race_start.mp3" id="4_njtn3"]
 [ext_resource type="AudioStream" uid="uid://b77vi05xd6auf" path="res://assets/audio/game_lose.mp3" id="5_aoitu"]
 
 [node name="AudioManager" type="Node"]
@@ -11,10 +12,17 @@ script = ExtResource("1_liach")
 
 [node name="MainMenu" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_3asnw")
+volume_db = -3.339
 autoplay = true
 
 [node name="CrowdAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_3asnw")
+volume_db = -3.0
+parameters/looping = true
+
+[node name="RaceBackground" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_njtn3")
+volume_db = 16.0
 parameters/looping = true
 
 [node name="RaceWin" type="AudioStreamPlayer" parent="."]
