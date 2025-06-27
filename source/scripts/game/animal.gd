@@ -9,14 +9,6 @@ var current_speed : float = 0.0
 var speed_index = 0
 
 func _ready() -> void:
-	# Initialize the speed
-	if speed_array.size() > 0:
-		current_speed = speed_array[speed_index]
-	else:
-		push_error("Speed array is empty, setting default speed to 100.0")
-		current_speed = 100.0
-
-	# Start
 	SignalBus.race_started.connect(handle_race_started)
 
 func _physics_process(_delta: float) -> void:

@@ -1,5 +1,4 @@
-extends AudioStreamPlayer2D
-
+extends Node
 
 func _ready():
 	
