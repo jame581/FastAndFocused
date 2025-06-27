@@ -25,19 +25,19 @@ func _physics_process(_delta: float) -> void:
 
 
 func race_start() -> void:
-	print("Race started")
+	print(name + "Race started")
 	speed_index = 0
 	current_speed = speed_array[speed_index]
 
 
 func race_next_stage() -> void:
-	print("Race advanced to next stage")
+	print(name + "Race advanced to next stage")
 	speed_index += 1
 	current_speed = speed_array[speed_index]
 
 
 func race_end() -> void:
-	print("Race ended")
+	print(name + "Race ended")
 	current_speed = 0.0
 
 

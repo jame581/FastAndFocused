@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://byyvyp1a0oe30"]
+[gd_scene load_steps=4 format=3 uid="uid://mrcgg8rgr1vr"]
 
-[ext_resource type="Script" path="res://scripts/game/animal.gd" id="1_rsu6n"]
+[ext_resource type="Script" uid="uid://3r506ukaxsup" path="res://scripts/game/animal.gd" id="1_rsu6n"]
 [ext_resource type="Texture2D" uid="uid://mk371vahuurm" path="res://icon.svg" id="2_8dtbx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_by74a"]
