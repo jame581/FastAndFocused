@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsy3tqd8ie6ca"]
+
+[ext_resource type="Script" uid="uid://ccn0bm7nndfow" path="res://scripts/audio_manager.gd" id="1_hux41"]
+[ext_resource type="AudioStream" uid="uid://cm035ntj86jpo" path="res://assets/audio/crowd_encouriging.mp3" id="2_v6v0x"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_hux41")
+
+[node name="CrowdAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_v6v0x")
