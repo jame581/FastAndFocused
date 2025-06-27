@@ -129,7 +129,7 @@ func spawn_obstacles(race_stage: Constants.RaceStage) -> void:
 
 		obstacle_instance.position.y = start_point.position.y
 		obstacle_instance.position.x = start_point.position.x + offset_stage_x
-		obstacles_node.add_child(obstacle_instance)
+		obstacles_node.call_deferred("add_child", obstacle_instance)
 
 
 func handle_race_started() -> void:

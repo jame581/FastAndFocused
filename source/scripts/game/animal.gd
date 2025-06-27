@@ -4,8 +4,14 @@ class_name Animal
 
 @export_category("Animal Settings")
 @export var speed_array: Array[float] = [100.0, 150.0, 200.0]
-@export var obstacle_effect_dict = {}
-
+@export var obstacle_effect_dict = {
+	Constants.ObstacleEnum.SAND_CASTLE: -50.0,
+	Constants.ObstacleEnum.FREE_HUGS: 30.0,
+	Constants.ObstacleEnum.HONEY: -20.0,
+	Constants.ObstacleEnum.SWEATER: 10.0,
+	Constants.ObstacleEnum.BATTERY: 50.0,
+	Constants.ObstacleEnum.BRICS: -30.0
+}
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
@@ -57,3 +63,4 @@ func handle_race_started() -> void:
 func affect_with_obstacle(obstacle: Constants.ObstacleEnum, duration: float) -> void:
 	active_obstacle = obstacle
 	obstacle_timeout = Time.get_ticks_msec() + duration * 1000.0
+	print(name + " affected by obstacle: ", obstacle, " for ", duration, " seconds")

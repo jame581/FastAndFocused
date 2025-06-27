@@ -1,8 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://bspeh2gqkxmpr"]
+[gd_scene load_steps=5 format=3 uid="uid://bspeh2gqkxmpr"]
 
-[ext_resource type="Script" uid="uid://cwssbt7ge4yxk" path="res://scripts/game/obsticle.gd" id="1_7ukg5"]
+[ext_resource type="Script" path="res://scripts/game/obsticle.gd" id="1_7ukg5"]
+[ext_resource type="Shader" uid="uid://b0i7ag80r44gw" path="res://shaders/obstacle.gdshader" id="2_fmab6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jowk5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ssuum"]
+shader = ExtResource("2_fmab6")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 1.0
+shader_parameter/outline_color = Color(1, 1, 1, 1)
 
 [node name="Obstacle" type="Area2D"]
 script = ExtResource("1_7ukg5")
@@ -13,3 +20,4 @@ shape = SubResource("RectangleShape2D_jowk5")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_ssuum")
