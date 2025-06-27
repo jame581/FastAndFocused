@@ -5,6 +5,7 @@ func _ready():
 	SignalBus.race_started.connect(handle_race_started)
 	SignalBus.race_finished.connect(handle_race_finished)
 	SignalBus.map_loaded.connect(handle_map_changed)
+#	SignalBus.game_over.connect(handle_gameover)
 	
 func handle_map_changed(mapEnum: Constants.GameScenes) -> void:
 	if(mapEnum == Constants.GameScenes.MAIN_MENU):
@@ -17,5 +18,11 @@ func handle_race_started() -> void:
 	
 func handle_race_finished(winner) -> void:
 	$CrowdAudio.stop()
-
+	$RaceWin.play()
+	
+#func handle_game_over(mapEnum: Constants.GameScenes) -> void:
+#	if(mapEnum == Constants.GameScenes.GAME_OVER):
+#		$GameOver.play()
+#	else 
+#		$GameOver.stop()
 	
