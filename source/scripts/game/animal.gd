@@ -40,6 +40,7 @@ func race_next_stage() -> void:
 func race_end() -> void:
 	print(name + "Race ended")
 	current_speed = 0.0
+	SignalBus.animal_finished.emit(self)
 
 func handle_race_started() -> void:
 	race_start()

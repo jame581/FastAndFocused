@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bsy3tqd8ie6ca"]
+[gd_scene load_steps=6 format=3 uid="uid://b5kfw75mrsexo"]
 
 [ext_resource type="Script" uid="uid://ccn0bm7nndfow" path="res://scripts/audio_manager.gd" id="1_liach"]
 [ext_resource type="AudioStream" uid="uid://cm035ntj86jpo" path="res://assets/audio/crowd_encouriging.mp3" id="2_3asnw"]

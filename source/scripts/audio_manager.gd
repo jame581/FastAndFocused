@@ -16,7 +16,7 @@ func handle_map_changed(mapEnum: Constants.GameScenes) -> void:
 func handle_race_started() -> void:
 	$CrowdAudio.play()
 	
-func handle_race_finished(winner) -> void:
+func handle_race_finished(animal_finish_order) -> void:
 	$CrowdAudio.stop()
 	$RaceWin.play()
 	
