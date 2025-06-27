@@ -36,9 +36,8 @@ func _on_start_button_pressed() -> void:
 
 func _on_bet_button_pressed() -> void:
 	print("Bet button pressed")
-	betting_ui.visible = true
-	
-	# set_ready_to_start(true)
+	betting_ui.visible = true	
+	set_ready_to_start(true)
 	# TODO: Implement betting logic here
 
 func set_ready_to_start(value: bool) -> void:

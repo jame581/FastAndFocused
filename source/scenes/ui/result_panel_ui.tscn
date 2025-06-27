@@ -1,7 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://csfwx48sasflj"]
+[gd_scene load_steps=14 format=3 uid="uid://csfwx48sasflj"]
 
-[ext_resource type="Script" path="res://scripts/ui/race_ui.gd" id="1_6o578"]
-[ext_resource type="Theme" path="res://resources/ui_betting_theme.tres" id="2_8t133"]
+[ext_resource type="Script" uid="uid://dk4c7ky66xuqs" path="res://scripts/ui/result_panel_ui.gd" id="1_t6wor"]
 [ext_resource type="Texture2D" uid="uid://b2soeeuiywi1c" path="res://assets/sprites/UI/background_panel_1.png" id="3_mirml"]
 [ext_resource type="Texture2D" uid="uid://ptlloynhxaso" path="res://assets/sprites/UI/Animals_UI5.png" id="7_rw4rw"]
 [ext_resource type="Texture2D" uid="uid://hh03e6qhrdbv" path="res://assets/sprites/UI/button_3.png" id="7_t6wor"]
@@ -24,7 +23,7 @@ texture = ExtResource("3_mirml")
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_yt5if"]
 thickness = 0
 
-[node name="BettingUI" type="MarginContainer"]
+[node name="ResultUI" type="MarginContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -34,7 +33,7 @@ theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 25
-script = ExtResource("1_6o578")
+script = ExtResource("1_t6wor")
 
 [node name="BettingPanel" type="Panel" parent="."]
 layout_mode = 2
@@ -54,7 +53,6 @@ layout_mode = 2
 [node name="left panel" type="Panel" parent="BettingPanel/MarginContainer/root"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("2_8t133")
 theme_override_styles/panel = SubResource("StyleBoxTexture_07u0o")
 
 [node name="MarginContainer" type="MarginContainer" parent="BettingPanel/MarginContainer/root/left panel"]
@@ -231,7 +229,6 @@ text = "<name>"
 [node name="right panel" type="Panel" parent="BettingPanel/MarginContainer/root"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("2_8t133")
 theme_override_styles/panel = SubResource("StyleBoxTexture_xsydr")
 
 [node name="MarginContainer3" type="MarginContainer" parent="BettingPanel/MarginContainer/root/right panel"]
