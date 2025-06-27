@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://df73yks3fka5u"]
+[gd_scene load_steps=3 format=3 uid="uid://df73yks3fka5u"]
 
 [ext_resource type="Script" uid="uid://c5dip531ctb3k" path="res://scripts/ui/main_menu.gd" id="1_pibn7"]
+[ext_resource type="Theme" uid="uid://dbivxp4ikj2iy" path="res://resources/main_menu_style.tres" id="2_krrnc"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -26,6 +27,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_krrnc")
 theme_override_constants/margin_left = 15
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
