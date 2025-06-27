@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://cdbkg4q3myof1"]
+[gd_scene load_steps=27 format=4 uid="uid://cdbkg4q3myof1"]
 
 [ext_resource type="Script" uid="uid://drnanpfm6g4lr" path="res://scripts/game/race_level.gd" id="1_0cdes"]
 [ext_resource type="TileSet" uid="uid://bawc2msg3cb35" path="res://resources/race_tileset.tres" id="1_x16n8"]
@@ -20,6 +20,43 @@
 [ext_resource type="PackedScene" uid="uid://b1krae42gdfms" path="res://scenes/obstacles/obstacle_honey.tscn" id="13_api6y"]
 [ext_resource type="PackedScene" uid="uid://6ji04yywhrlk" path="res://scenes/obstacles/obstacle_sand_castle.tscn" id="14_45se3"]
 [ext_resource type="PackedScene" uid="uid://cdadxcbb15ev3" path="res://scenes/obstacles/obstacle_sweater.tscn" id="15_i74bn"]
+[ext_resource type="Texture2D" uid="uid://btohaa1xqqhgl" path="res://assets/sprites/spritesheets/Crowd-Sheet.png" id="21_r5g81"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7ln2"]
+atlas = ExtResource("21_r5g81")
+region = Rect2(0, 0, 128, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_api6y"]
+atlas = ExtResource("21_r5g81")
+region = Rect2(128, 0, 128, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_45se3"]
+atlas = ExtResource("21_r5g81")
+region = Rect2(256, 0, 128, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i74bn"]
+atlas = ExtResource("21_r5g81")
+region = Rect2(384, 0, 128, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wpb2n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7ln2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_api6y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45se3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i74bn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="RaceLevel" type="Node2D"]
 script = ExtResource("1_0cdes")
@@ -89,3 +126,88 @@ race_stage = 2
 [node name="NextStageTrigger2" parent="." instance=ExtResource("7_dxed3")]
 position = Vector2(1256, 84)
 race_stage = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(704, 317)
+sprite_frames = SubResource("SpriteFrames_wpb2n")
+autoplay = "default"
+
+[node name="AnimatedSprite2D17" type="AnimatedSprite2D" parent="."]
+position = Vector2(-30, 317)
+sprite_frames = SubResource("SpriteFrames_wpb2n")
+autoplay = "default"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(825, 324)
+sprite_frames = SubResource("SpriteFrames_wpb2n")
+autoplay = "default"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+position = Vector2(947, 328)
+sprite_frames = SubResource("SpriteFrames_wpb2n")
+autoplay = "default"
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
+position = Vector2(1068, 323)
+sprite_frames = SubResource("SpriteFrames_wpb2n")
+autoplay = "default"
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="."]
+position = Vector2(1190, 331)
+sprite_frames = SubResource("SpriteFrames_wpb2n")
+autoplay = "default"
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="."]
+position = Vector2(1313, 331)
+sprite_frames = SubResource("SpriteFrames_wpb2n")
+autoplay = "default"
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="."]
+position = Vector2(1433, 336)
+sprite_frames = SubResource("SpriteFrames_wpb2n")
+autoplay = "default"
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="."]
+position = Vector2(1555, 334)
+sprite_frames = SubResource("SpriteFrames_wpb2n")
+autoplay = "default"
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="."]
+position = Vector2(1678, 343)
+sprite_frames = SubResource("SpriteFrames_wpb2n")
+autoplay = "default"
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="."]
+position = Vector2(1798, 341)
+sprite_frames = SubResource("SpriteFrames_wpb2n")
+autoplay = "default"
+
+[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="."]
+position = Vector2(1916, 337)
+sprite_frames = SubResource("SpriteFrames_wpb2n")
+autoplay = "default"
+
+[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="."]
+position = Vector2(93, 322)
+sprite_frames = SubResource("SpriteFrames_wpb2n")
+autoplay = "default"
+
+[node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="."]
+position = Vector2(215, 318)
+sprite_frames = SubResource("SpriteFrames_wpb2n")
+autoplay = "default"
+
+[node name="AnimatedSprite2D14" type="AnimatedSprite2D" parent="."]
+position = Vector2(338, 318)
+sprite_frames = SubResource("SpriteFrames_wpb2n")
+autoplay = "default"
+
+[node name="AnimatedSprite2D15" type="AnimatedSprite2D" parent="."]
+position = Vector2(458, 323)
+sprite_frames = SubResource("SpriteFrames_wpb2n")
+autoplay = "default"
+
+[node name="AnimatedSprite2D16" type="AnimatedSprite2D" parent="."]
+position = Vector2(580, 321)
+sprite_frames = SubResource("SpriteFrames_wpb2n")
+autoplay = "default"
