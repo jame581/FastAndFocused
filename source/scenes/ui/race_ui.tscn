@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://dt472oed537f2"]
 
-[ext_resource type="Script" path="res://scripts/ui/race_ui.gd" id="1_5wmyy"]
+[ext_resource type="Script" uid="uid://bhimsfnru32fe" path="res://scripts/ui/race_ui.gd" id="1_5wmyy"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_5wmyy"]
 device = -1
