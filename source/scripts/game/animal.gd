@@ -21,13 +21,13 @@ func _ready() -> void:
 	animation_player.play("idle")
 
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if (obstacle_timeout < Time.get_ticks_msec() and obstacle_effect_dict.has(active_obstacle)):
 		velocity.x = current_speed + obstacle_effect_dict[active_obstacle]
 	else:
 		velocity.x = current_speed
 	
-	move_and_slide()
+	move_and_collide(velocity * delta)
 
 
 func race_start() -> void:

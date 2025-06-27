@@ -1,10 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://mrcgg8rgr1vr"]
+[gd_scene load_steps=7 format=3 uid="uid://mrcgg8rgr1vr"]
 
 [ext_resource type="Script" uid="uid://3r506ukaxsup" path="res://scripts/game/animal.gd" id="1_rsu6n"]
 [ext_resource type="Texture2D" uid="uid://l2ptjmx47328" path="res://assets/sprites/all_Animals.png" id="2_8dtbx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8dtbx"]
 size = Vector2(32, 32)
+
+[sub_resource type="Animation" id="Animation_8dtbx"]
+resource_name = "idle"
+
+[sub_resource type="Animation" id="Animation_236rq"]
+resource_name = "movement"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3v7ex"]
+_data = {
+&"idle": SubResource("Animation_8dtbx"),
+&"movement": SubResource("Animation_236rq")
+}
 
 [node name="Animal" type="CharacterBody2D"]
 script = ExtResource("1_rsu6n")
@@ -14,6 +26,10 @@ shape = SubResource("RectangleShape2D_8dtbx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_8dtbx")
+offset = Vector2(0, -16)
 hframes = 7
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_3v7ex")
+}
