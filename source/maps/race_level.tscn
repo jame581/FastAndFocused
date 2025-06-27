@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://cdbkg4q3myof1"]
+[gd_scene load_steps=21 format=4 uid="uid://cdbkg4q3myof1"]
 
 [ext_resource type="Script" uid="uid://drnanpfm6g4lr" path="res://scripts/game/race_level.gd" id="1_0cdes"]
 [ext_resource type="TileSet" uid="uid://bawc2msg3cb35" path="res://resources/race_tileset.tres" id="1_x16n8"]
@@ -14,10 +14,17 @@
 [ext_resource type="PackedScene" uid="uid://dhy50jrbld7ei" path="res://scenes/animals/hippo.tscn" id="7_g5xp3"]
 [ext_resource type="PackedScene" uid="uid://bckiebj8xg3a" path="res://scenes/animals/kakapo.tscn" id="8_xk15m"]
 [ext_resource type="PackedScene" uid="uid://xed6nx71xdrg" path="res://scenes/animals/rat.tscn" id="9_r5g81"]
+[ext_resource type="PackedScene" uid="uid://b53j3bbefenpd" path="res://scenes/obstacles/obstacle_battery.tscn" id="10_xk15m"]
+[ext_resource type="PackedScene" uid="uid://7dqjf7s4otod" path="res://scenes/obstacles/obstacle_brics.tscn" id="11_r5g81"]
+[ext_resource type="PackedScene" uid="uid://cvl3g3ebll45t" path="res://scenes/obstacles/obstacle_free_hugs.tscn" id="12_q7ln2"]
+[ext_resource type="PackedScene" uid="uid://b1krae42gdfms" path="res://scenes/obstacles/obstacle_honey.tscn" id="13_api6y"]
+[ext_resource type="PackedScene" uid="uid://6ji04yywhrlk" path="res://scenes/obstacles/obstacle_sand_castle.tscn" id="14_45se3"]
+[ext_resource type="PackedScene" uid="uid://cdadxcbb15ev3" path="res://scenes/obstacles/obstacle_sweater.tscn" id="15_i74bn"]
 
 [node name="RaceLevel" type="Node2D"]
 script = ExtResource("1_0cdes")
 animals = Array[PackedScene]([ExtResource("2_jxlxr"), ExtResource("3_daqq8"), ExtResource("4_a0gyu"), ExtResource("5_tmfgv"), ExtResource("6_k8a4p"), ExtResource("7_g5xp3"), ExtResource("8_xk15m"), ExtResource("9_r5g81")])
+obstacles = Array[PackedScene]([ExtResource("10_xk15m"), ExtResource("11_r5g81"), ExtResource("12_q7ln2"), ExtResource("13_api6y"), ExtResource("14_45se3"), ExtResource("15_i74bn")])
 
 [node name="TileMaps" type="Node2D" parent="."]
 
@@ -51,6 +58,8 @@ position = Vector2(15, 176)
 [node name="Position4" type="Node2D" parent="StartPoints"]
 position = Vector2(15, 208)
 
+[node name="Obstacles" type="Node2D" parent="."]
+
 [node name="Animals" type="Node2D" parent="."]
 
 [node name="UI" type="CanvasLayer" parent="."]
@@ -75,6 +84,8 @@ position = Vector2(1885, 84)
 
 [node name="NextStageTrigger" parent="." instance=ExtResource("7_dxed3")]
 position = Vector2(628, 84)
+race_stage = 2
 
 [node name="NextStageTrigger2" parent="." instance=ExtResource("7_dxed3")]
 position = Vector2(1256, 84)
+race_stage = 3

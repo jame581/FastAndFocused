@@ -2,10 +2,14 @@ extends Node2D
 
 @export_category("Race Settings")
 @export var animals: Array[PackedScene]
+@export var obstacles: Array[PackedScene]
+@export var obstacles_per_stage: int = 4
+@export var	obstacles_spawn_offset: Vector2 = Vector2(150, 0)
 
 
 @onready var start_points_parent: Node2D = $StartPoints
 @onready var animals_node: Node2D = $Animals
+@onready var obstacles_node: Node2D = $Obstacles
 @onready var camera: Camera2D = $Camera2D
 
 # Local variables
@@ -38,7 +42,11 @@ func _ready() -> void:
 	SignalBus.race_camera_switch.connect(_on_camera_switch)	
 	
 	SignalBus.animal_finished.connect(_handle_animal_finished)
-	SignalBus.race_finished.connect(_handle_race_finished) #TODO: rm?
+	SignalBus.race_finished.connect(_handle_race_finished)
+	SignalBus.spawn_race_obstacles.connect(spawn_obstacles)
+	SignalBus.race_started.connect(handle_race_started)
+
+
 
 func _process(_delta: float) -> void:
 	# Update camera position to follow the target animal and keep it in view
@@ -75,7 +83,7 @@ func spawn_animals_to_spawn_points() -> void:
 		animals_node.add_child(animal_instance)
 		animal_array.append(animal_instance)
 	
-	
+
 func _on_camera_switch(animal_index: int) -> void:
 	# Switch camera to the specified animal
 	if animal_index < 0 or animal_index >= animals_node.get_child_count():
@@ -94,3 +102,35 @@ func _handle_animal_finished(animal: Animal):
 
 func _handle_race_finished(local_animal_finish_order: Array[Animal]):
 	print("race finished") #TODO: rm
+
+
+func spawn_obstacles(race_stage: Constants.RaceStage) -> void:
+	# Spawn a random obstacle at a random position
+	if obstacles.size() == 0:
+		push_error("No obstacles available to spawn")
+		return
+	
+	var offset_stage_x : float = 0.0
+
+	if race_stage == Constants.RaceStage.START:
+		offset_stage_x = 315.0
+	elif race_stage == Constants.RaceStage.MIDDLE:
+		offset_stage_x = 630.0 + 315.0
+	elif race_stage == Constants.RaceStage.FINISH:
+		offset_stage_x = 945.0 + 315.0
+	else:
+		push_error("Invalid race stage")
+
+	# Spawn obstacles at the Y axis of start points
+	for i in range(obstacles_per_stage):
+		var start_point = start_points[i % start_points.size()]
+		var obstacle_scene = obstacles[randi() % obstacles.size()]
+		var obstacle_instance = obstacle_scene.instantiate()
+
+		obstacle_instance.position.y = start_point.position.y
+		obstacle_instance.position.x = start_point.position.x + offset_stage_x
+		obstacles_node.add_child(obstacle_instance)
+
+
+func handle_race_started() -> void:
+	spawn_obstacles(Constants.RaceStage.START)
