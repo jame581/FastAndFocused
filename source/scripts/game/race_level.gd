@@ -11,6 +11,7 @@ extends Node2D
 @onready var animals_node: Node2D = $Animals
 @onready var obstacles_node: Node2D = $Obstacles
 @onready var camera: Camera2D = $Camera2D
+@onready var betting_ui: MarginContainer = $UI/BettingUI
 
 # Local variables
 var start_points: Array[Node2D]
@@ -35,6 +36,8 @@ func _ready() -> void:
 
 	if animals_node.get_child_count() > 0:
 		target_animal = animals_node.get_child(0)
+
+	betting_ui.visible = false
 
 	SignalBus.race_init.emit()
 
