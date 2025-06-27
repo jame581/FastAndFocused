@@ -20,6 +20,7 @@ var current_speed : float = 0.0
 var speed_index = 0
 var active_obstacle : Constants.ObstacleEnum = Constants.ObstacleEnum.NONE
 var obstacle_timeout : float = 0.0
+var race_ended : bool = false
 
 
 func _ready() -> void:
@@ -28,6 +29,9 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if race_ended:
+		return
+
 	if (obstacle_timeout < Time.get_ticks_msec() and obstacle_effect_dict.has(active_obstacle)):
 		velocity.x = current_speed + obstacle_effect_dict[active_obstacle]
 	else:
@@ -41,6 +45,7 @@ func race_start() -> void:
 	speed_index = 0
 	current_speed = speed_array[speed_index]
 	animation_player.play("movement")
+	race_ended = false
 
 
 func race_next_stage() -> void:
@@ -54,6 +59,7 @@ func race_end() -> void:
 	current_speed = 0.0
 	SignalBus.animal_finished.emit(self)
 	animation_player.play("idle")
+	race_ended = true
 
 
 func handle_race_started() -> void:
