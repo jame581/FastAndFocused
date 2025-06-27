@@ -6,7 +6,7 @@ enum GameScenes
 {
 	UNKNOWN,
 	MAIN_MENU,
-    RACE
+	RACE
 }
 
 const MAPS = {

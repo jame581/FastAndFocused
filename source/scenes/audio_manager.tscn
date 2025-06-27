@@ -1,10 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bsy3tqd8ie6ca"]
+[gd_scene load_steps=4 format=3 uid="uid://bsy3tqd8ie6ca"]
 
 [ext_resource type="Script" uid="uid://ccn0bm7nndfow" path="res://scripts/audio_manager.gd" id="1_liach"]
 [ext_resource type="AudioStream" uid="uid://cm035ntj86jpo" path="res://assets/audio/crowd_encouriging.mp3" id="2_3asnw"]
+[ext_resource type="AudioStream" uid="uid://bt7xmjtwidjql" path="res://assets/audio/main_menu.mp3" id="3_3asnw"]
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_liach")
 
 [node name="CrowdAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_3asnw")
+parameters/looping = true
+
+[node name="MainMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_3asnw")
+autoplay = true
