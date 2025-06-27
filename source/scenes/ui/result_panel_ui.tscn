@@ -1,0 +1,231 @@
+[gd_scene load_steps=13 format=3 uid="uid://csfwx48sasflj"]
+
+[ext_resource type="Script" path="res://scripts/ui/race_ui.gd" id="1_6o578"]
+[ext_resource type="Theme" path="res://resources/ui_betting_theme.tres" id="2_8t133"]
+[ext_resource type="Texture2D" uid="uid://b2soeeuiywi1c" path="res://assets/sprites/UI/background_panel_1.png" id="3_mirml"]
+[ext_resource type="Texture2D" uid="uid://c5tg3kmrlq38l" path="res://assets/sprites/UI/button_2.png" id="4_0pq7i"]
+[ext_resource type="Texture2D" uid="uid://dn37ih4mk53ci" path="res://assets/sprites/UI/button_1.png" id="5_lixxn"]
+[ext_resource type="Texture2D" uid="uid://bjf7bro2bkwxg" path="res://assets/sprites/UI/Animals_UI8.png" id="9_qjk6t"]
+[ext_resource type="Texture2D" uid="uid://kki4m82jc54s" path="res://assets/sprites/UI/arrow.png" id="10_t024f"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_07u0o"]
+texture = ExtResource("3_mirml")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_viks2"]
+texture = ExtResource("4_0pq7i")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7b6id"]
+texture = ExtResource("5_lixxn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xsydr"]
+texture = ExtResource("3_mirml")
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_l8jla"]
+grow_begin = 45.0
+grow_end = 45.0
+thickness = 11
+
+[node name="BettingUI" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+script = ExtResource("1_6o578")
+
+[node name="BettingPanel" type="Panel" parent="."]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="BettingPanel"]
+layout_mode = 2
+offset_right = 590.0
+offset_bottom = 310.0
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="root" type="HBoxContainer" parent="BettingPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="left panel" type="Panel" parent="BettingPanel/MarginContainer/root"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_8t133")
+theme_override_styles/panel = SubResource("StyleBoxTexture_07u0o")
+
+[node name="MarginContainer" type="MarginContainer" parent="BettingPanel/MarginContainer/root/left panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 30
+
+[node name="left" type="VBoxContainer" parent="BettingPanel/MarginContainer/root/left panel/MarginContainer"]
+layout_mode = 2
+
+[node name="Button4" type="Button" parent="BettingPanel/MarginContainer/root/left panel/MarginContainer/left"]
+custom_minimum_size = Vector2(200, 55)
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxTexture_viks2")
+theme_override_styles/normal = SubResource("StyleBoxTexture_7b6id")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BettingPanel/MarginContainer/root/left panel/MarginContainer/left/Button4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 61.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+size_flags_horizontal = 0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="BettingPanel/MarginContainer/root/left panel/MarginContainer/left/Button4/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("9_qjk6t")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BettingPanel/MarginContainer/root/left panel/MarginContainer/left/Button4/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="name" type="Label" parent="BettingPanel/MarginContainer/root/left panel/MarginContainer/left/Button4/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Betting odds:"
+
+[node name="name2" type="Label" parent="BettingPanel/MarginContainer/root/left panel/MarginContainer/left/Button4/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "<odds>"
+
+[node name="Result1" type="Panel" parent="BettingPanel/MarginContainer/root/left panel/MarginContainer/left"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="BettingPanel/MarginContainer/root/left panel/MarginContainer/left/Result1"]
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("9_qjk6t")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BettingPanel/MarginContainer/root/left panel/MarginContainer/left/Result1"]
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="name" type="Label" parent="BettingPanel/MarginContainer/root/left panel/MarginContainer/left/Result1/VBoxContainer"]
+layout_mode = 2
+text = "Betting odds:"
+
+[node name="name2" type="Label" parent="BettingPanel/MarginContainer/root/left panel/MarginContainer/left/Result1/VBoxContainer"]
+layout_mode = 2
+text = "<odds>"
+
+[node name="right panel" type="Panel" parent="BettingPanel/MarginContainer/root"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_8t133")
+theme_override_styles/panel = SubResource("StyleBoxTexture_xsydr")
+
+[node name="MarginContainer3" type="MarginContainer" parent="BettingPanel/MarginContainer/root/right panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="BettingPanel/MarginContainer/root/right panel/MarginContainer3"]
+custom_minimum_size = Vector2(180, 180)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("9_qjk6t")
+
+[node name="MarginContainer" type="MarginContainer" parent="BettingPanel/MarginContainer/root/right panel/MarginContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/margin_bottom = 55
+
+[node name="Panel" type="Panel" parent="BettingPanel/MarginContainer/root/right panel/MarginContainer3/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxLine_l8jla")
+
+[node name="Button" type="Button" parent="BettingPanel/MarginContainer/root/right panel/MarginContainer3/MarginContainer/Panel"]
+custom_minimum_size = Vector2(80, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.5
+offset_top = -25.0
+offset_right = 45.5
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"FlatButton"
+theme_override_constants/outline_size = 4
+text = "Bet on ME!"
+
+[node name="MarginContainer4" type="MarginContainer" parent="BettingPanel/MarginContainer/root/right panel/MarginContainer3"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_bottom = 60
+
+[node name="TextureRect2" type="TextureRect" parent="BettingPanel/MarginContainer/root/right panel/MarginContainer3/MarginContainer4"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+texture = ExtResource("10_t024f")
+flip_h = true
+
+[node name="MarginContainer5" type="MarginContainer" parent="BettingPanel/MarginContainer/root/right panel/MarginContainer3"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 60
+
+[node name="TextureRect2" type="TextureRect" parent="BettingPanel/MarginContainer/root/right panel/MarginContainer3/MarginContainer5"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+texture = ExtResource("10_t024f")
+
+[node name="MarginContainer2" type="MarginContainer" parent="BettingPanel/MarginContainer/root/right panel/MarginContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/margin_top = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BettingPanel/MarginContainer/root/right panel/MarginContainer3/MarginContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BettingPanel/MarginContainer/root/right panel/MarginContainer3/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "Animal Name:"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="BettingPanel/MarginContainer/root/right panel/MarginContainer3/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "<name>"
+horizontal_alignment = 1
