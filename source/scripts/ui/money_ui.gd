@@ -1,7 +1,7 @@
 extends MarginContainer
 
-@onready var money_label: Label = $HBoxContainer/MoneyLabel
-@onready var debt_label: RichTextLabel = $HBoxContainer/DebtLabel
+@onready var money_label: Label = $HBoxContainer/VBoxContainer/MoneyLabel
+@onready var debt_label: RichTextLabel = $HBoxContainer/VBoxContainer/DebtLabel
 @onready var borrow_button: Button = $HBoxContainer/BorrowMoneyButton
 
 var current_money: int = 0

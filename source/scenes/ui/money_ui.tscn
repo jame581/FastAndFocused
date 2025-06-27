@@ -14,20 +14,21 @@ script = ExtResource("1_ekdo8")
 layout_mode = 2
 theme_override_constants/separation = 15
 
-[node name="MoneyLabel" type="Label" parent="HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="MoneyLabel" type="Label" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "Cash: 0"
 
-[node name="DebtLabel" type="RichTextLabel" parent="HBoxContainer"]
+[node name="DebtLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_vertical = 4
 bbcode_enabled = true
 text = "Debt: [color=red]1000[/color]"
 fit_content = true
-
-[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
-layout_mode = 2
 
 [node name="BorrowMoneyButton" type="Button" parent="HBoxContainer"]
 layout_mode = 2
