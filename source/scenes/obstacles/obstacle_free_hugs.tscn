@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dnwyst7twdrc" path="res://assets/sprites/FreeHugs.png" id="2_43wck"]
 
 [node name="Obstacle" instance=ExtResource("1_ku8yp")]
+obstacle_enum = 4
 
 [node name="Sprite2D" parent="." index="2"]
 scale = Vector2(0.3125, 0.3125)

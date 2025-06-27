@@ -23,3 +23,10 @@ enum ObstacleEnum {
 	BATTERY,
 	SWEATER
 }
+
+enum RaceStage {
+    UNKNOWN,
+    START,
+    MIDDLE,
+    FINISH
+}

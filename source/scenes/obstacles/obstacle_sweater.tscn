@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b1spp7yfvxtm0" path="res://assets/sprites/Sweater.png" id="2_4ebjs"]
 
 [node name="Obstacle" instance=ExtResource("1_i0xt2")]
+obstacle_enum = 6
 
 [node name="Sprite2D" parent="." index="2"]
 scale = Vector2(0.625, 0.625)
