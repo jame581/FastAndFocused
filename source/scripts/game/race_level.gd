@@ -53,12 +53,28 @@ func spawn_animals_to_spawn_points() -> void:
 	animal_array = []
 	animal_finish_order_array = []
 	
+	# Create a copy of the animals array to ensure we have unique selections
+	var available_animals = animals.duplicate()
+	# Ensure we have enough animals or repeat if necessary
+	if available_animals.size() == 0:
+			push_error("No animal scenes available")
+			return
+	
+	# Shuffle the array to get random selection
+	available_animals.shuffle()
+
 	for i in range(start_points.size()):
-		var animal_scene = animals[i % animals.size()]
+		# Get animal scene, cycling through the shuffled list if needed
+		var animal_scene = available_animals[i % available_animals.size()]
+		# # Remove the selected animal to ensure uniqueness
+		# if i < available_animals.size():
+		# 	available_animals.remove(i % available_animals.size())
+	
 		var animal_instance = animal_scene.instantiate()
 		animal_instance.position = start_points[i].position
 		animals_node.add_child(animal_instance)
 		animal_array.append(animal_instance)
+	
 	
 func _on_camera_switch(animal_index: int) -> void:
 	# Switch camera to the specified animal

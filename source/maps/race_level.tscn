@@ -1,16 +1,23 @@
-[gd_scene load_steps=8 format=4 uid="uid://cdbkg4q3myof1"]
+[gd_scene load_steps=15 format=4 uid="uid://cdbkg4q3myof1"]
 
 [ext_resource type="Script" uid="uid://drnanpfm6g4lr" path="res://scripts/game/race_level.gd" id="1_0cdes"]
 [ext_resource type="TileSet" uid="uid://bawc2msg3cb35" path="res://resources/race_tileset.tres" id="1_x16n8"]
-[ext_resource type="PackedScene" uid="uid://mrcgg8rgr1vr" path="res://scenes/animal.tscn" id="2_eo7ug"]
+[ext_resource type="PackedScene" uid="uid://bb3df6fob46ly" path="res://scenes/animals/beaver.tscn" id="2_jxlxr"]
+[ext_resource type="PackedScene" uid="uid://rf5y1g5ttneu" path="res://scenes/animals/dog.tscn" id="3_daqq8"]
+[ext_resource type="PackedScene" uid="uid://dqkyh4ugjo7ys" path="res://scenes/animals/fish.tscn" id="4_a0gyu"]
 [ext_resource type="PackedScene" uid="uid://dt472oed537f2" path="res://scenes/ui/race_ui.tscn" id="4_rk0xo"]
 [ext_resource type="PackedScene" uid="uid://cu6rpnjfshk0r" path="res://scenes/ui/money_ui.tscn" id="5_57tpj"]
+[ext_resource type="PackedScene" uid="uid://uhbmffuandfn" path="res://scenes/animals/giraffe.tscn" id="5_tmfgv"]
 [ext_resource type="PackedScene" uid="uid://bndkgd0wx2vwa" path="res://scenes/finishg_race_trigger.tscn" id="6_7ccno"]
+[ext_resource type="PackedScene" uid="uid://fvinroh8tuhj" path="res://scenes/animals/goat.tscn" id="6_k8a4p"]
 [ext_resource type="PackedScene" uid="uid://cnriykb7ihd22" path="res://scenes/next_stagel_trigger.tscn" id="7_dxed3"]
+[ext_resource type="PackedScene" uid="uid://dhy50jrbld7ei" path="res://scenes/animals/hippo.tscn" id="7_g5xp3"]
+[ext_resource type="PackedScene" uid="uid://bckiebj8xg3a" path="res://scenes/animals/kakapo.tscn" id="8_xk15m"]
+[ext_resource type="PackedScene" uid="uid://xed6nx71xdrg" path="res://scenes/animals/rat.tscn" id="9_r5g81"]
 
 [node name="RaceLevel" type="Node2D"]
 script = ExtResource("1_0cdes")
-animals = Array[PackedScene]([ExtResource("2_eo7ug"), ExtResource("2_eo7ug"), ExtResource("2_eo7ug")])
+animals = Array[PackedScene]([ExtResource("2_jxlxr"), ExtResource("3_daqq8"), ExtResource("4_a0gyu"), ExtResource("5_tmfgv"), ExtResource("6_k8a4p"), ExtResource("7_g5xp3"), ExtResource("8_xk15m"), ExtResource("9_r5g81")])
 
 [node name="TileMaps" type="Node2D" parent="."]
 
