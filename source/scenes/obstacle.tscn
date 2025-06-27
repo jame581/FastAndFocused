@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bspeh2gqkxmpr"]
+
+[ext_resource type="Script" uid="uid://cwssbt7ge4yxk" path="res://scripts/game/obsticle.gd" id="1_7ukg5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jowk5"]
+
+[node name="Obstacle" type="Area2D"]
+script = ExtResource("1_7ukg5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jowk5")
