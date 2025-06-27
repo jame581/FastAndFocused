@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Animal
 
 @export_category("Animal Settings")
 @export var speed_array: Array[float] = [100.0, 150.0, 200.0]

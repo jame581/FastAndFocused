@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bndkgd0wx2vwa"]
+
+[ext_resource type="Script" uid="uid://cgsngbun5b55q" path="res://scenes/finishg_level_trigger.gd" id="1_kuho3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rbqvt"]
+size = Vector2(20, 184)
+
+[node name="FinishgLevelTrigger" type="Area2D"]
+script = ExtResource("1_kuho3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 82)
+shape = SubResource("RectangleShape2D_rbqvt")
