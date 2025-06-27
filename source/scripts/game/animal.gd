@@ -1,20 +1,44 @@
 extends CharacterBody2D
 
-var current_speed : float = 0.0 
+@export_category("Animal Settings")
 @export var speed_array: Array[float] = [100.0, 150.0, 200.0]
+
+# Local variables
+var current_speed : float = 0.0 
 var speed_index = 0
 
-func _physics_process(delta: float) -> void:
+func _ready() -> void:
+	# Initialize the speed
+	if speed_array.size() > 0:
+		current_speed = speed_array[speed_index]
+	else:
+		push_error("Speed array is empty, setting default speed to 100.0")
+		current_speed = 100.0
+
+	# Start
+	SignalBus.race_started.connect(handle_race_started)
+
+func _physics_process(_delta: float) -> void:
 	velocity.x = current_speed
 	move_and_slide()
 
+
 func race_start() -> void:
+	print("Race started")
 	speed_index = 0
 	current_speed = speed_array[speed_index]
 
+
 func race_next_stage() -> void:
+	print("Race advanced to next stage")
 	speed_index += 1
 	current_speed = speed_array[speed_index]
 
+
 func race_end() -> void:
+	print("Race ended")
 	current_speed = 0.0
+
+
+func handle_race_started() -> void:
+	race_start()
