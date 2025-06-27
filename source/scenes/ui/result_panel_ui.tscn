@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://csfwx48sasflj"]
+[gd_scene load_steps=15 format=3 uid="uid://csfwx48sasflj"]
 
 [ext_resource type="Script" path="res://scripts/ui/race_ui.gd" id="1_6o578"]
 [ext_resource type="Theme" path="res://resources/ui_betting_theme.tres" id="2_8t133"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cikat3coqaarj" path="res://assets/sprites/UI/Animals_UI7.png" id="8_6o578"]
 [ext_resource type="Texture2D" uid="uid://b0jwg2k4ghf0a" path="res://assets/sprites/UI/Animals_UI4.png" id="8_mm6bb"]
 [ext_resource type="Texture2D" uid="uid://bjf7bro2bkwxg" path="res://assets/sprites/UI/Animals_UI8.png" id="9_qjk6t"]
+[ext_resource type="Theme" uid="uid://dbivxp4ikj2iy" path="res://resources/main_menu_style.tres" id="9_rw4rw"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_07u0o"]
 texture = ExtResource("3_mirml")
@@ -240,6 +241,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
 [node name="TextureRect" type="TextureRect" parent="BettingPanel/MarginContainer/root/right panel/MarginContainer3"]
 custom_minimum_size = Vector2(180, 180)
@@ -277,6 +282,34 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxLine_yt5if")
 text = "WINNER!"
+
+[node name="MarginContainer3" type="MarginContainer" parent="BettingPanel/MarginContainer/root/right panel/MarginContainer3"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 5
+
+[node name="Panel" type="Panel" parent="BettingPanel/MarginContainer/root/right panel/MarginContainer3/MarginContainer3"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxLine_4dja5")
+
+[node name="Button" type="Button" parent="BettingPanel/MarginContainer/root/right panel/MarginContainer3/MarginContainer3/Panel"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -18.5
+offset_right = 18.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("9_rw4rw")
+text = "Next"
 
 [node name="MarginContainer2" type="MarginContainer" parent="BettingPanel/MarginContainer/root/right panel/MarginContainer3"]
 layout_mode = 2
