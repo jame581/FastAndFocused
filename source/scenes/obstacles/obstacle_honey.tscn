@@ -1,5 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://b1krae42gdfms"]
+[gd_scene load_steps=3 format=3 uid="uid://b1krae42gdfms"]
 
 [ext_resource type="PackedScene" uid="uid://bspeh2gqkxmpr" path="res://scenes/obstacles/obstacle.tscn" id="1_c33n6"]
+[ext_resource type="Texture2D" uid="uid://dfkcvdrjn4jme" path="res://assets/sprites/Honey.png" id="2_2lax2"]
 
 [node name="Obstacle" instance=ExtResource("1_c33n6")]
+
+[node name="Sprite2D" parent="." index="2"]
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("2_2lax2")

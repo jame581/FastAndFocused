@@ -1,5 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cdadxcbb15ev3"]
+[gd_scene load_steps=3 format=3 uid="uid://cdadxcbb15ev3"]
 
 [ext_resource type="PackedScene" uid="uid://bspeh2gqkxmpr" path="res://scenes/obstacles/obstacle.tscn" id="1_i0xt2"]
+[ext_resource type="Texture2D" uid="uid://b1spp7yfvxtm0" path="res://assets/sprites/Sweater.png" id="2_4ebjs"]
 
 [node name="Obstacle" instance=ExtResource("1_i0xt2")]
+
+[node name="Sprite2D" parent="." index="2"]
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("2_4ebjs")

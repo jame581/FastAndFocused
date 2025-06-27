@@ -1,5 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cvl3g3ebll45t"]
+[gd_scene load_steps=3 format=3 uid="uid://cvl3g3ebll45t"]
 
 [ext_resource type="PackedScene" uid="uid://bspeh2gqkxmpr" path="res://scenes/obstacles/obstacle.tscn" id="1_ku8yp"]
+[ext_resource type="Texture2D" uid="uid://dnwyst7twdrc" path="res://assets/sprites/FreeHugs.png" id="2_43wck"]
 
 [node name="Obstacle" instance=ExtResource("1_ku8yp")]
+
+[node name="Sprite2D" parent="." index="2"]
+scale = Vector2(0.3125, 0.3125)
+texture = ExtResource("2_43wck")
