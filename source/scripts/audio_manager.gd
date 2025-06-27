@@ -12,12 +12,16 @@ func handle_map_changed(mapEnum: Constants.GameScenes) -> void:
 		$MainMenu.play()
 	else:
 		$MainMenu.stop()
+		$CrowdAudio.play()
+		$CrowdAudio.volume_db = -10
 
 func handle_race_started() -> void:
-	$CrowdAudio.play()
+	$CrowdAudio.volume_db = +6
+	$RaceBackground.play()
 	
 func handle_race_finished(animal_finish_order) -> void:
 	$CrowdAudio.stop()
+	$RaceBackground.stop()
 	$RaceWin.play()
 	
 #func handle_game_over(mapEnum: Constants.GameScenes) -> void:
