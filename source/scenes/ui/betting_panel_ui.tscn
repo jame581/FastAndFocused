@@ -82,11 +82,9 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_7b6id")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/FirstLineupButton"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 61.0
-offset_bottom = 12.0
+anchors_preset = -1
+offset_right = 261.0
+offset_bottom = 67.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.8, 0.8)
@@ -108,9 +106,9 @@ size_flags_vertical = 4
 layout_mode = 2
 text = "Betting odds:"
 
-[node name="name2" type="Label" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/FirstLineupButton/HBoxContainer/VBoxContainer"]
+[node name="FirstLineupOdds" type="Label" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/FirstLineupButton/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "<odds>"
+text = "1.35"
 
 [node name="SecondLineupButton" type="Button" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left"]
 custom_minimum_size = Vector2(200, 55)
@@ -146,7 +144,7 @@ size_flags_vertical = 4
 layout_mode = 2
 text = "Betting odds:"
 
-[node name="name2" type="Label" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/SecondLineupButton/HBoxContainer/VBoxContainer"]
+[node name="SecondLineupOdds" type="Label" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/SecondLineupButton/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "<odds>"
 
@@ -184,7 +182,7 @@ size_flags_vertical = 4
 layout_mode = 2
 text = "Betting odds:"
 
-[node name="name2" type="Label" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/ThirdLineupButton/HBoxContainer/VBoxContainer"]
+[node name="ThirdLineupOdds" type="Label" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/ThirdLineupButton/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "<odds>"
 
@@ -222,7 +220,7 @@ size_flags_vertical = 4
 layout_mode = 2
 text = "Betting odds:"
 
-[node name="name2" type="Label" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/FourthLineupButton/HBoxContainer/VBoxContainer"]
+[node name="FourthLineupOdds" type="Label" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/FourthLineupButton/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "<odds>"
 
