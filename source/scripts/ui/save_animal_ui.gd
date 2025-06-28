@@ -22,7 +22,7 @@ func _ready() -> void:
 	animation_player.animation_finished.connect(_on_animation_finished)
 	
 	SignalBus.race_finished.connect(_on_race_finished)
-	SignalBus.cash_changed.connect(_on_cash_cahnged)
+	SignalBus.cash_changed.connect(_on_cash_changed)
 	next_button.pressed.connect(_on_next_button_pressed)
 	buy_animal_button.pressed.connect(_on_buy_animal_button_pressed)
 	
@@ -69,5 +69,5 @@ func _on_buy_animal_button_pressed():
 	buy_animal_button.disabled = true
 	SignalBus.animal_saved.emit(last_animal_id)
 
-func _on_cash_cahnged(cash: int):
+func _on_cash_changed(cash: int):
 	cash_labels.text = "[color=\"black\"]Cash: " + str(cash) + "[/color]"

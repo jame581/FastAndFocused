@@ -17,8 +17,7 @@ var ready_to_start: bool = false
 
 func _ready() -> void:
 
-	set_ready_to_start(false)
-	
+	set_ready_to_start(false)	
 
 	# Connect button signals
 	start_button.pressed.connect(_on_start_button_pressed)
@@ -53,6 +52,7 @@ func set_ready_to_start(value: bool) -> void:
 	ready_to_start = value
 	start_button.disabled = not value
 	your_bet_texture.visible = value
+	bet_button.disabled = value
 
 func _on_camera_switch_1_pressed() -> void:
 	SignalBus.race_camera_switch.emit(0)
