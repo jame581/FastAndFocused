@@ -117,7 +117,7 @@ theme_override_constants/margin_bottom = 30
 layout_mode = 2
 
 [node name="FirstLineupButton" type="Button" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left"]
-custom_minimum_size = Vector2(200, 55)
+custom_minimum_size = Vector2(180, 40)
 layout_mode = 2
 theme_override_styles/hover = SubResource("StyleBoxTexture_viks2")
 theme_override_styles/normal = SubResource("StyleBoxTexture_7b6id")
@@ -125,7 +125,7 @@ text = "Odds: 1.6"
 icon = ExtResource("6_viks2")
 
 [node name="SecondLineupButton" type="Button" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left"]
-custom_minimum_size = Vector2(200, 55)
+custom_minimum_size = Vector2(180, 40)
 layout_mode = 2
 theme_override_styles/hover = SubResource("StyleBoxTexture_viks2")
 theme_override_styles/normal = SubResource("StyleBoxTexture_7b6id")
@@ -133,7 +133,7 @@ text = "Odds: 1.6"
 icon = ExtResource("6_0s0fw")
 
 [node name="ThirdLineupButton" type="Button" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left"]
-custom_minimum_size = Vector2(200, 55)
+custom_minimum_size = Vector2(180, 40)
 layout_mode = 2
 theme_override_styles/hover = SubResource("StyleBoxTexture_viks2")
 theme_override_styles/normal = SubResource("StyleBoxTexture_7b6id")
@@ -141,7 +141,7 @@ text = "Odds: 5.63"
 icon = ExtResource("7_viks2")
 
 [node name="FourthLineupButton" type="Button" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left"]
-custom_minimum_size = Vector2(200, 55)
+custom_minimum_size = Vector2(180, 40)
 layout_mode = 2
 theme_override_styles/hover = SubResource("StyleBoxTexture_viks2")
 theme_override_styles/normal = SubResource("StyleBoxTexture_7b6id")
@@ -208,6 +208,7 @@ offset_right = 45.5
 offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("10_7b6id")
 theme_type_variation = &"FlatButton"
 theme_override_constants/outline_size = 4
 text = "Bet on ME!"

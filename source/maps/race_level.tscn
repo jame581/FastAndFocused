@@ -104,6 +104,11 @@ position = Vector2(15, 208)
 [node name="UI" type="CanvasLayer" parent="."]
 layer = 128
 
+[node name="RaceControlUI" parent="UI" node_paths=PackedStringArray("betting_ui") instance=ExtResource("4_rk0xo")]
+size_flags_horizontal = 0
+size_flags_vertical = 8
+betting_ui = NodePath("../BettingUI")
+
 [node name="MoneyUI" parent="UI" instance=ExtResource("5_57tpj")]
 anchors_preset = 5
 anchor_left = 0.5
@@ -118,11 +123,6 @@ size_flags_horizontal = 4
 [node name="BettingUI" parent="UI" instance=ExtResource("19_q7ln2")]
 
 [node name="ResultUI" parent="UI" instance=ExtResource("20_api6y")]
-
-[node name="RaceControlUI" parent="UI" node_paths=PackedStringArray("betting_ui") instance=ExtResource("4_rk0xo")]
-size_flags_horizontal = 0
-size_flags_vertical = 8
-betting_ui = NodePath("../BettingUI")
 
 [node name="FinishgLevelTrigger" parent="." instance=ExtResource("6_7ccno")]
 position = Vector2(1885, 84)

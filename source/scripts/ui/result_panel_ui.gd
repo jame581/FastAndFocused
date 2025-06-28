@@ -4,10 +4,10 @@ extends MarginContainer
 @onready var winner_label: Label = $BettingPanel/MarginContainer/root/RightPanel/MarginContainer3/MarginContainer2/VBoxContainer/WinnerNameLabel
 @onready var winner_texture: TextureRect = $BettingPanel/MarginContainer/root/RightPanel/MarginContainer3/WinnerTextureRect
 
-@onready var first_place_name_label: Label = $BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/Result1/HBoxContainer/VBoxContainer/FirstPlaceNameLabel
-@onready var second_place_name_label: Label = $BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/Result2/HBoxContainer/VBoxContainer/SecondPlaceNameLabel
-@onready var third_place_name_label: Label = $BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/Result3/HBoxContainer/VBoxContainer/ThirdPlaceNameLabel
-@onready var fourth_place_name_label: Label = $BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/Result4/HBoxContainer/VBoxContainer/FourthPlaceNameLabel
+@onready var first_place_name_label: Label = $BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/Result1/HBoxContainer/FirstPlaceNameLabel
+@onready var second_place_name_label: Label = $BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/Result2/HBoxContainer/SecondPlaceNameLabel
+@onready var third_place_name_label: Label = $BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/Result3/HBoxContainer/ThirdPlaceNameLabel
+@onready var fourth_place_name_label: Label = $BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/Result4/HBoxContainer/FourthPlaceNameLabel
 
 @onready var first_place_texture: TextureRect = $BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/Result1/HBoxContainer/FirstPlaceTextureRect
 @onready var second_place_texture: TextureRect = $BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/Result2/HBoxContainer/SecondPlaceTextureRect
