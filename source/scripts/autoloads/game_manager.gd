@@ -45,7 +45,7 @@ func _handle_race_finished(animal_finish_order: Array[Animal]):
 	unsaved_animals.append(animal_finish_order[-1].id)
 	bets.clear()
 	
-	if	cash <= 0:
+	if	cash < Constants.BET_AMOUNT:
 		SignalBus.game_over.emit()
 
 func _handle_animal_saved(animal_id: Constants.AnimalId):

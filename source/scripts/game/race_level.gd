@@ -53,7 +53,6 @@ func _ready() -> void:
 	SignalBus.bet_placed.connect(handle_bet_placed)
 
 
-
 func _process(_delta: float) -> void:
 	# Update camera position to follow the target animal and keep it in view
 	if target_animal:

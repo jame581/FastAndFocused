@@ -1,0 +1,280 @@
+[gd_scene load_steps=12 format=3 uid="uid://dt3x2a377eaym"]
+
+[ext_resource type="Script" uid="uid://csr6m85q8475x" path="res://scripts/ui/save_animal_ui.gd" id="1_ri3su"]
+[ext_resource type="Texture2D" uid="uid://b2soeeuiywi1c" path="res://assets/sprites/UI/background_panel_1.png" id="2_d0fmg"]
+[ext_resource type="Texture2D" uid="uid://b0jwg2k4ghf0a" path="res://assets/sprites/UI/Animals_UI4.png" id="4_v5lf1"]
+[ext_resource type="Theme" uid="uid://dbivxp4ikj2iy" path="res://resources/main_menu_style.tres" id="8_bqucb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_07u0o"]
+texture = ExtResource("2_d0fmg")
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_4dja5"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_yt5if"]
+thickness = 0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xsydr"]
+texture = ExtResource("2_d0fmg")
+
+[sub_resource type="Animation" id="Animation_rw4rw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_t6wor"]
+resource_name = "fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rw4rw"]
+_data = {
+&"RESET": SubResource("Animation_rw4rw"),
+&"fade_in": SubResource("Animation_t6wor")
+}
+
+[node name="SaveAnimalUI" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+script = ExtResource("1_ri3su")
+
+[node name="BettingPanel" type="Panel" parent="."]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="BettingPanel"]
+layout_mode = 2
+offset_right = 590.0
+offset_bottom = 310.0
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="root" type="HBoxContainer" parent="BettingPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="LeftPanel" type="Panel" parent="BettingPanel/MarginContainer/root"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_07u0o")
+
+[node name="MarginContainer3" type="MarginContainer" parent="BettingPanel/MarginContainer/root/LeftPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="WinnerTextureRect" type="TextureRect" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer3"]
+custom_minimum_size = Vector2(180, 180)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_v5lf1")
+stretch_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/margin_bottom = 40
+
+[node name="Panel" type="Panel" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer3/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxLine_4dja5")
+
+[node name="CashLabel" type="RichTextLabel" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer3/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -79.5
+offset_top = -23.0
+offset_right = 79.5
+grow_horizontal = 2
+grow_vertical = 0
+bbcode_enabled = true
+text = "[color=\"red\"]Cash: 350[/color]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/margin_top = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer3/MarginContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer3/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxLine_yt5if")
+text = "LOOZER! >("
+
+[node name="WinnerNameLabel" type="Label" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer3/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "<name>"
+horizontal_alignment = 1
+
+[node name="RightPanel" type="Panel" parent="BettingPanel/MarginContainer/root"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_xsydr")
+
+[node name="MarginContainer3" type="MarginContainer" parent="BettingPanel/MarginContainer/root/RightPanel"]
+layout_mode = 2
+offset_left = 204.0
+offset_top = 240.0
+offset_right = 234.0
+offset_bottom = 245.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 5
+
+[node name="Panel" type="Panel" parent="BettingPanel/MarginContainer/root/RightPanel/MarginContainer3"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxLine_4dja5")
+
+[node name="NextButton" type="Button" parent="BettingPanel/MarginContainer/root/RightPanel/MarginContainer3/Panel"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -18.5
+offset_right = 18.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("8_bqucb")
+text = "Next race"
+
+[node name="MarginContainer4" type="MarginContainer" parent="BettingPanel/MarginContainer/root/RightPanel"]
+layout_mode = 2
+offset_left = 73.0
+offset_top = 240.0
+offset_right = 103.0
+offset_bottom = 245.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 5
+
+[node name="Panel" type="Panel" parent="BettingPanel/MarginContainer/root/RightPanel/MarginContainer4"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxLine_4dja5")
+
+[node name="NextButton" type="Button" parent="BettingPanel/MarginContainer/root/RightPanel/MarginContainer4/Panel"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -18.5
+offset_right = 18.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("8_bqucb")
+text = "Buy animal"
+
+[node name="MarginContainer" type="MarginContainer" parent="BettingPanel/MarginContainer/root/RightPanel"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 22.0
+offset_right = 255.0
+offset_bottom = 210.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BettingPanel/MarginContainer/root/RightPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BettingPanel/MarginContainer/root/RightPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxLine_yt5if")
+text = "ANIMAL FATE"
+
+[node name="AnimalFateLabel" type="Label" parent="BettingPanel/MarginContainer/root/RightPanel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 125)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "<text>"
+autowrap_mode = 3
+
+[node name="Panel" type="Panel" parent="BettingPanel/MarginContainer/root/RightPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxLine_4dja5")
+
+[node name="ResultLabel" type="RichTextLabel" parent="BettingPanel/MarginContainer/root/RightPanel/MarginContainer/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -79.0
+offset_top = -16.0
+offset_right = 108.0
+grow_horizontal = 2
+grow_vertical = 0
+bbcode_enabled = true
+text = "[color=\"red\"]Cost: 50[/color]"
+fit_content = true
+horizontal_alignment = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_rw4rw")
+}
+
+[connection signal="pressed" from="BettingPanel/MarginContainer/root/RightPanel/MarginContainer3/Panel/NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="BettingPanel/MarginContainer/root/RightPanel/MarginContainer4/Panel/NextButton" to="." method="_on_next_button_pressed"]
