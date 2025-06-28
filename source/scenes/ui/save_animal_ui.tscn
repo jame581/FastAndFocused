@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dt3x2a377eaym"]
+[gd_scene load_steps=12 format=3 uid="uid://crf6s1cfh7uws"]
 
 [ext_resource type="Script" uid="uid://csr6m85q8475x" path="res://scripts/ui/save_animal_ui.gd" id="1_ri3su"]
 [ext_resource type="Texture2D" uid="uid://b2soeeuiywi1c" path="res://assets/sprites/UI/background_panel_1.png" id="2_d0fmg"]

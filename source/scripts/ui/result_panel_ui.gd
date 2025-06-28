@@ -1,5 +1,7 @@
 extends MarginContainer
 
+@export_category("UI")
+@export var save_animal_ui: MarginContainer
 
 @onready var winner_label: Label = $BettingPanel/MarginContainer/root/RightPanel/MarginContainer3/MarginContainer2/VBoxContainer/WinnerNameLabel
 @onready var winner_texture: TextureRect = $BettingPanel/MarginContainer/root/RightPanel/MarginContainer3/WinnerTextureRect
@@ -92,4 +94,7 @@ func _on_animation_finished(_anim_name: String) -> void:
 
 func _on_next_button_pressed() -> void:
 	hide_betting_panel()
-	SceneChanger.goto_scene(Constants.GameScenes.RACE)
+	if save_animal_ui:
+		save_animal_ui.show_panel()
+	else:
+		SceneChanger.goto_scene(Constants.GameScenes.RACE)

@@ -3,9 +3,9 @@ extends MarginContainer
 
 @onready var looser_name_label: Label = $BettingPanel/MarginContainer/root/LeftPanel/MarginContainer3/MarginContainer2/VBoxContainer/WinnerNameLabel
 @onready var looser_fate_text_label: Label = $BettingPanel/MarginContainer/root/RightPanel/MarginContainer/VBoxContainer/AnimalFateLabel
-@onready var cash_labels: Label = $BettingPanel/MarginContainer/root/LeftPanel/MarginContainer3/MarginContainer/Panel/CashLabel
+@onready var cash_labels: RichTextLabel = $BettingPanel/MarginContainer/root/LeftPanel/MarginContainer3/MarginContainer/Panel/CashLabel
 
-@onready var looser_icon_texture: Label = $BettingPanel/MarginContainer/root/LeftPanel/MarginContainer3/WinnerTextureRect
+@onready var looser_icon_texture: TextureRect = $BettingPanel/MarginContainer/root/LeftPanel/MarginContainer3/WinnerTextureRect
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 @onready var next_button: Button = $BettingPanel/MarginContainer/root/RightPanel/MarginContainer3/Panel/NextButton
