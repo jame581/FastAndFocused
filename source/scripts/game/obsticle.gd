@@ -13,4 +13,5 @@ func _ready() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if(body is Animal):
 		body.affect_with_obstacle(obstacle_enum, obstacle_duration)
+		SignalBus.animal_triggered_obstacle.emit(body.id, obstacle_enum)
 		queue_free();

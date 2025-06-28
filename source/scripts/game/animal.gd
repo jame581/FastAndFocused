@@ -3,6 +3,7 @@ extends CharacterBody2D
 class_name Animal
 
 @export_category("Animal Settings")
+@export var id: Constants.AnimalId = Constants.AnimalId.BEAVER
 @export var speed_array: Array[float] = [100.0, 150.0, 200.0]
 @export var obstacle_effect_dict = {
 	Constants.ObstacleEnum.SAND_CASTLE: -50.0,

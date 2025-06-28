@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bspeh2gqkxmpr"]
 
-[ext_resource type="Script" path="res://scripts/game/obsticle.gd" id="1_7ukg5"]
+[ext_resource type="Script" uid="uid://cwssbt7ge4yxk" path="res://scripts/game/obsticle.gd" id="1_7ukg5"]
 [ext_resource type="Shader" uid="uid://b0i7ag80r44gw" path="res://shaders/obstacle.gdshader" id="2_fmab6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jowk5"]
