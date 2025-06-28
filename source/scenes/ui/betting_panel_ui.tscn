@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://mkcb1tttmlvi"]
+[gd_scene load_steps=18 format=3 uid="uid://mkcb1tttmlvi"]
 
 [ext_resource type="Script" uid="uid://c8c0wmyovrg8k" path="res://scripts/ui/betting_panel_ui.gd" id="1_xsydr"]
 [ext_resource type="Texture2D" uid="uid://b0jwg2k4ghf0a" path="res://assets/sprites/UI/Animals_UI4.png" id="3_l8jla"]
@@ -7,7 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://c5tg3kmrlq38l" path="res://assets/sprites/UI/button_2.png" id="4_xsydr"]
 [ext_resource type="Texture2D" uid="uid://bjf7bro2bkwxg" path="res://assets/sprites/UI/Animals_UI8.png" id="5_07u0o"]
 [ext_resource type="Texture2D" uid="uid://kki4m82jc54s" path="res://assets/sprites/UI/arrow.png" id="5_mh340"]
-[ext_resource type="Texture2D" uid="uid://3ndqmve4wjom" path="res://assets/sprites/UI/Animals_UI6.png" id="6_7b6id"]
+[ext_resource type="Texture2D" uid="uid://ou0v5jgj6kxl" path="res://assets/sprites/UI/Animals_UI2.png" id="6_0s0fw"]
+[ext_resource type="Texture2D" uid="uid://dhck1kstep5ij" path="res://assets/sprites/UI/Animals_UI1.png" id="6_viks2"]
 [ext_resource type="Texture2D" uid="uid://df8nea6fxt3ot" path="res://assets/sprites/UI/Animals_UI3.png" id="7_viks2"]
 [ext_resource type="Theme" uid="uid://dbivxp4ikj2iy" path="res://resources/main_menu_style.tres" id="10_7b6id"]
 
@@ -82,150 +83,32 @@ custom_minimum_size = Vector2(200, 55)
 layout_mode = 2
 theme_override_styles/hover = SubResource("StyleBoxTexture_viks2")
 theme_override_styles/normal = SubResource("StyleBoxTexture_7b6id")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/FirstLineupButton"]
-layout_mode = 1
-anchors_preset = -1
-offset_right = 261.0
-offset_bottom = 67.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.8, 0.8)
-size_flags_horizontal = 0
-alignment = 1
-
-[node name="FirstLineupTextureRect" type="TextureRect" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/FirstLineupButton/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-texture = ExtResource("6_7b6id")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/FirstLineupButton/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="name" type="Label" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/FirstLineupButton/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "Betting odds:"
-
-[node name="FirstLineupOdds" type="Label" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/FirstLineupButton/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "1.35"
+text = "Odds: 1.6"
+icon = ExtResource("6_viks2")
 
 [node name="SecondLineupButton" type="Button" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left"]
 custom_minimum_size = Vector2(200, 55)
 layout_mode = 2
 theme_override_styles/hover = SubResource("StyleBoxTexture_viks2")
 theme_override_styles/normal = SubResource("StyleBoxTexture_7b6id")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/SecondLineupButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 61.0
-offset_bottom = 12.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.8, 0.8)
-size_flags_horizontal = 0
-alignment = 1
-
-[node name="SecondLineupTextureRect" type="TextureRect" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/SecondLineupButton/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-texture = ExtResource("7_viks2")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/SecondLineupButton/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="name" type="Label" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/SecondLineupButton/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "Betting odds:"
-
-[node name="SecondLineupOdds" type="Label" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/SecondLineupButton/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "<odds>"
+text = "Odds: 1.6"
+icon = ExtResource("6_0s0fw")
 
 [node name="ThirdLineupButton" type="Button" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left"]
 custom_minimum_size = Vector2(200, 55)
 layout_mode = 2
 theme_override_styles/hover = SubResource("StyleBoxTexture_viks2")
 theme_override_styles/normal = SubResource("StyleBoxTexture_7b6id")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/ThirdLineupButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 61.0
-offset_bottom = 12.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.8, 0.8)
-size_flags_horizontal = 0
-alignment = 1
-
-[node name="ThirdLineupTextureRect" type="TextureRect" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/ThirdLineupButton/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-texture = ExtResource("3_l8jla")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/ThirdLineupButton/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="name" type="Label" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/ThirdLineupButton/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "Betting odds:"
-
-[node name="ThirdLineupOdds" type="Label" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/ThirdLineupButton/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "<odds>"
+text = "Odds: 5.63"
+icon = ExtResource("7_viks2")
 
 [node name="FourthLineupButton" type="Button" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left"]
 custom_minimum_size = Vector2(200, 55)
 layout_mode = 2
 theme_override_styles/hover = SubResource("StyleBoxTexture_viks2")
 theme_override_styles/normal = SubResource("StyleBoxTexture_7b6id")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/FourthLineupButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 61.0
-offset_bottom = 12.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.8, 0.8)
-size_flags_horizontal = 0
-alignment = 1
-
-[node name="FourthLineupTextureRect" type="TextureRect" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/FourthLineupButton/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-texture = ExtResource("5_07u0o")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/FourthLineupButton/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="name" type="Label" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/FourthLineupButton/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "Betting odds:"
-
-[node name="FourthLineupOdds" type="Label" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/FourthLineupButton/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "<odds>"
+text = "Odds: 4.68"
+icon = ExtResource("3_l8jla")
 
 [node name="RightPanel" type="Panel" parent="BettingPanel/MarginContainer/root"]
 layout_mode = 2
@@ -247,6 +130,19 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("5_07u0o")
 
+[node name="MarginContainer4" type="MarginContainer" parent="BettingPanel/MarginContainer/root/RightPanel/MarginContainer3"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_bottom = 60
+
+[node name="TextureRect2" type="TextureRect" parent="BettingPanel/MarginContainer/root/RightPanel/MarginContainer3/MarginContainer4"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+texture = ExtResource("5_mh340")
+flip_h = true
+
 [node name="MarginContainer" type="MarginContainer" parent="BettingPanel/MarginContainer/root/RightPanel/MarginContainer3"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -260,7 +156,7 @@ size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxLine_l8jla")
 
 [node name="BetButton" type="Button" parent="BettingPanel/MarginContainer/root/RightPanel/MarginContainer3/MarginContainer/Panel"]
-z_index = 100
+z_index = 10
 custom_minimum_size = Vector2(80, 50)
 layout_mode = 1
 anchors_preset = 8
@@ -277,19 +173,6 @@ grow_vertical = 2
 theme_type_variation = &"FlatButton"
 theme_override_constants/outline_size = 4
 text = "Bet on ME!"
-
-[node name="MarginContainer4" type="MarginContainer" parent="BettingPanel/MarginContainer/root/RightPanel/MarginContainer3"]
-layout_mode = 2
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_bottom = 60
-
-[node name="TextureRect2" type="TextureRect" parent="BettingPanel/MarginContainer/root/RightPanel/MarginContainer3/MarginContainer4"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 8
-texture = ExtResource("5_mh340")
-flip_h = true
 
 [node name="MarginContainer5" type="MarginContainer" parent="BettingPanel/MarginContainer/root/RightPanel/MarginContainer3"]
 layout_mode = 2
@@ -365,4 +248,5 @@ text = "Close"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
+[connection signal="pressed" from="BettingPanel/MarginContainer/root/RightPanel/MarginContainer3/MarginContainer/Panel/BetButton" to="." method="_on_bet_button_pressed"]
 [connection signal="pressed" from="BettingPanel/MarginContainer/root/RightPanel/MarginContainer4/Panel/CloseButton" to="." method="_on_close_button_pressed"]

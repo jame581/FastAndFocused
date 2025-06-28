@@ -15,15 +15,6 @@ extends MarginContainer
 @onready var animal_name_label: Label = $BettingPanel/MarginContainer/root/RightPanel/MarginContainer3/MarginContainer2/VBoxContainer/AnimalNameLabel
 @onready var animal_icon_texture_rect: TextureRect = $BettingPanel/MarginContainer/root/RightPanel/MarginContainer3/AnimalTextureRect
 
-@onready var first_lineup_texture_rect: TextureRect = $BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/FirstLineupButton/HBoxContainer/FirstLineupTextureRect
-@onready var second_lineup_texture_rect: TextureRect = $BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/SecondLineupButton/HBoxContainer/SecondLineupTextureRect
-@onready var third_lineup_texture_rect: TextureRect = $BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/ThirdLineupButton/HBoxContainer/ThirdLineupTextureRect
-@onready var fourth_lineup_texture_rect: TextureRect = $BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/FourthLineupButton/HBoxContainer/FourthLineupTextureRect
-
-@onready var first_lineup_odds: Label = $BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/FirstLineupButton/HBoxContainer/VBoxContainer/FirstLineupOdds
-@onready var second_lineup_odds: Label = $BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/SecondLineupButton/HBoxContainer/VBoxContainer/SecondLineupOdds
-@onready var third_lineup_odds: Label = $BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/ThirdLineupButton/HBoxContainer/VBoxContainer/ThirdLineupOdds
-@onready var fourth_lineup_odds: Label = $BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/FourthLineupButton/HBoxContainer/VBoxContainer/FourthLineupOdds
 
 var animals_lineup: Array[Constants.AnimalId] = []
 var current_animal_index: int = 0
@@ -52,6 +43,7 @@ func set_animals_lineup(lineup: Array[Animal]) -> void:
 
 	update_lineup_textures()
 	generate_odds()
+	switch_animal(0)
 
 
 func show_betting_panel() -> void:
@@ -89,14 +81,15 @@ func _on_fourth_lineup_button_pressed() -> void:
 
 func update_lineup_textures() -> void:
 	# Update the textures for the lineup buttons
-	if animals_lineup.size() > 0:
-		first_lineup_texture_rect.texture = Constants.ANIMAL_DATA[animals_lineup[0]]["icon"]
-	if animals_lineup.size() > 1:
-		second_lineup_texture_rect.texture = Constants.ANIMAL_DATA[animals_lineup[1]]["icon"]
-	if animals_lineup.size() > 2:
-		third_lineup_texture_rect.texture = Constants.ANIMAL_DATA[animals_lineup[2]]["icon"]
-	if animals_lineup.size() > 3:
-		fourth_lineup_texture_rect.texture = Constants.ANIMAL_DATA[animals_lineup[3]]["icon"]
+	
+	if animals_lineup.size() < 4:
+		push_error("Not enough animals in lineup to update textures")
+		return
+
+	first_lineup_button.icon = Constants.ANIMAL_DATA[animals_lineup[0]]["icon"]
+	second_lineup_button.icon = Constants.ANIMAL_DATA[animals_lineup[1]]["icon"]
+	third_lineup_button.icon = Constants.ANIMAL_DATA[animals_lineup[2]]["icon"]
+	fourth_lineup_button.icon = Constants.ANIMAL_DATA[animals_lineup[3]]["icon"]
 
 
 func generate_odds() -> void:
@@ -110,11 +103,15 @@ func generate_odds() -> void:
 		# format odds to two decimal places
 		odds = round(odds * 100) / 100.0
 		match i:
-			0: first_lineup_odds.text = str(odds)
-			1: second_lineup_odds.text = str(odds)
-			2: third_lineup_odds.text = str(odds)
-			3: fourth_lineup_odds.text = str(odds)
+			0: first_lineup_button.text = "Odds: " + str(odds)
+			1: second_lineup_button.text = "Odds: " + str(odds)
+			2: third_lineup_button.text = "Odds: " + str(odds)
+			3: fourth_lineup_button.text = "Odds: " + str(odds)
 
 
 func _on_close_button_pressed() -> void:
 	visible = false
+
+
+func _on_bet_button_pressed() -> void:
+	print("Bet button pressed")
