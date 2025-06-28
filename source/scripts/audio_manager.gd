@@ -84,4 +84,6 @@ func _on_timer_timeout() -> void:
 	can_shout = true
 	
 func handle_game_over() -> void:
+	$CrowdAudio.stop()
 	$GameOver.play()
+	

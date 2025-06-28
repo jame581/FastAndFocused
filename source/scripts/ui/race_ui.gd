@@ -35,6 +35,7 @@ func _ready() -> void:
 	# Connect signals from SignalBus
 	SignalBus.bet_placed.connect(handle_bet_placed)
 	SignalBus.race_init.connect(handle_race_init)
+	SignalBus.race_started.connect(handle_race_started)
 
 
 func _on_start_button_pressed() -> void:
@@ -88,3 +89,6 @@ func setup_switch_camera_icons(animal_ids: Array[Constants.AnimalId]) -> void:
 
 func _on_shout_button_pressed() -> void:
 	AudioManager.play_shout()
+
+func handle_race_started() -> void:
+	start_button.disabled = true

@@ -14,7 +14,7 @@ config/name="Fast and Focused"
 config/description="Autistic Animal Race Association is on its last leg and is on the edge of filing bankruptcy and is forced to slowly sell off all of their animals thus digging itself deeper and deeper. The only way to save as much of the animals as possible, you need to make some real money and quick. Fortunately, the betting markets are still in full swing and open for business.
 
 The animals are not at all normal, they have their own, … ehm, personalities. So their response to some certain things may differ, so keep that in mind when placing your bets. Will you save some animals? become filthy rich or lose it all on red? The race track awaits."
-config/version="0.3"
+config/version="0.4"
 run/main_scene="uid://df73yks3fka5u"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="uid://cmy8ku837vxx"

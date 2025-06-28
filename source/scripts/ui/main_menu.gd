@@ -14,6 +14,9 @@ func _ready() -> void:
 
 	credits_ui.visible = false
 
+	if OS.has_feature("web"):
+		exit_button.visible = false  # Hide exit button in web builds
+
 	# Set the version text
 	var version_label: Label = $MarginContainer/VBoxContainer/HBoxContainer/RightVBoxContainer/VersionLabel
 	version_label.text = Global.get_game_version()
