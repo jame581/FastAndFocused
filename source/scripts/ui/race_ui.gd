@@ -5,6 +5,7 @@ extends MarginContainer
 
 @onready var start_button: Button = $HBoxContainer/ButtonsContainer/StartRaceButton
 @onready var bet_button: Button = $HBoxContainer/ButtonsContainer/BetButton
+@onready var your_bet_texture: TextureRect = $HBoxContainer/VBoxContainer/YourBetTexture
 
 @onready var camera_switch_1: Button = $HBoxContainer/CameraSwitchContainer/HBoxContainer/Animal1Button
 @onready var camera_switch_2: Button = $HBoxContainer/CameraSwitchContainer/HBoxContainer/Animal2Button
@@ -16,6 +17,7 @@ var ready_to_start: bool = false
 func _ready() -> void:
 
 	set_ready_to_start(false)
+	
 
 	# Connect button signals
 	start_button.pressed.connect(_on_start_button_pressed)
@@ -47,6 +49,7 @@ func _on_bet_button_pressed() -> void:
 func set_ready_to_start(value: bool) -> void:
 	ready_to_start = value
 	start_button.disabled = not value
+	your_bet_texture.visible = value
 
 func _on_camera_switch_1_pressed() -> void:
 	SignalBus.race_camera_switch.emit(0)
@@ -62,6 +65,7 @@ func _on_camera_switch_4_pressed() -> void:
 
 func handle_bet_placed(animal_id: Constants.AnimalId, bet_amount: int) -> void:
 	print("Bet placed on animal: " + str(animal_id) + " with amount: " + str(bet_amount))
+	your_bet_texture.texture = Constants.ANIMAL_DATA[animal_id]["icon"]
 	set_ready_to_start(true)
 
 func handle_race_init() -> void:
