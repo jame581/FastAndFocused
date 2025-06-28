@@ -57,10 +57,13 @@ func handle_animal_trigger (animalId: Constants.AnimalId, obstacle_enum: Constan
 		$AnimalHippo.play()
 	
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("shout") and can_shout:
+	if event.is_action_pressed("shout"):
 		play_shout()
 
 func play_shout() -> void:
+	if not can_shout:
+		return
+	
 	can_shout = false
 	
 	var shouts = [

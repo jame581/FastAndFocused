@@ -93,26 +93,21 @@ volume_db = -3.0
 
 [node name="Shout1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_m1k83")
-bus = &"Shout"
 
 [node name="Shout2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_oummu")
-bus = &"Shout"
 
 [node name="Shout3" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("20_f6jxr")
-bus = &"Shout"
 
 [node name="Shout4" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("21_ovaav")
-bus = &"Shout"
 
 [node name="Shout5" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_thanh")
-bus = &"Shout"
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 1.5
+wait_time = 2.0
 one_shot = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
