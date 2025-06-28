@@ -46,7 +46,7 @@ func set_animals_lineup(lineup: Array[Animal]) -> void:
 			push_error("Invalid animal in lineup: " + str(animal))
 
 	update_lineup_textures()
-	generate_odds()
+	# generate_odds()
 	switch_animal(0)
 
 

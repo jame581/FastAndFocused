@@ -120,32 +120,32 @@ custom_minimum_size = Vector2(180, 40)
 layout_mode = 2
 theme_override_styles/hover = SubResource("StyleBoxTexture_viks2")
 theme_override_styles/normal = SubResource("StyleBoxTexture_7b6id")
-text = "Odds: 1.6"
 icon = ExtResource("6_viks2")
+icon_alignment = 1
 
 [node name="SecondLineupButton" type="Button" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left"]
 custom_minimum_size = Vector2(180, 40)
 layout_mode = 2
 theme_override_styles/hover = SubResource("StyleBoxTexture_viks2")
 theme_override_styles/normal = SubResource("StyleBoxTexture_7b6id")
-text = "Odds: 1.6"
 icon = ExtResource("6_0s0fw")
+icon_alignment = 1
 
 [node name="ThirdLineupButton" type="Button" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left"]
 custom_minimum_size = Vector2(180, 40)
 layout_mode = 2
 theme_override_styles/hover = SubResource("StyleBoxTexture_viks2")
 theme_override_styles/normal = SubResource("StyleBoxTexture_7b6id")
-text = "Odds: 5.63"
 icon = ExtResource("7_viks2")
+icon_alignment = 1
 
 [node name="FourthLineupButton" type="Button" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left"]
 custom_minimum_size = Vector2(180, 40)
 layout_mode = 2
 theme_override_styles/hover = SubResource("StyleBoxTexture_viks2")
 theme_override_styles/normal = SubResource("StyleBoxTexture_7b6id")
-text = "Odds: 4.68"
 icon = ExtResource("3_l8jla")
+icon_alignment = 1
 
 [node name="RightPanel" type="Panel" parent="BettingPanel/MarginContainer/root"]
 layout_mode = 2
