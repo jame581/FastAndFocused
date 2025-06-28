@@ -134,7 +134,7 @@ func spawn_obstacles(race_stage: Constants.RaceStage) -> void:
 	elif race_stage == Constants.RaceStage.MIDDLE:
 		offset_stage_x = 630.0 + 315.0
 	elif race_stage == Constants.RaceStage.FINISH:
-		offset_stage_x = 945.0 + 315.0
+		offset_stage_x = 945.0 + 315.0 + 315.0
 	else:
 		push_error("Invalid race stage")
 
