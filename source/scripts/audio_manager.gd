@@ -1,5 +1,9 @@
 extends Node
 
+@onready var timer = $Timer
+
+var can_shout: bool = true
+
 func _ready():
 	
 	SignalBus.race_started.connect(handle_race_started)
@@ -52,20 +56,25 @@ func handle_animal_trigger (animalId: Constants.AnimalId, obstacle_enum: Constan
 	elif animalId == Constants.AnimalId.HIPPO:
 		$AnimalHippo.play()
 	
-#func handle_shouts():
-#	randomize()
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("shout") and can_shout:
+		play_shout()
 
-#	$Button.pressed.connect(_on_Button_pressed)
-
-#func _on_Button_pressed(mapEnum: Constants.GameScenes, ):
-#	var shouts = [
-#		$Shout1,
-#		$Shout2,
-#		$Shout3,
-#		$Shout4,
-#		$Shout5
-#	]
-#
-#	var index = randi() % shouts.size()
-#	shouts[index].play()
+func play_shout() -> void:
+	can_shout = false
 	
+	var shouts = [
+		$Shout1,
+		$Shout2,
+		$Shout3,
+		$Shout4,
+		$Shout5
+	]
+
+	var index = randi() % shouts.size()
+	shouts[index].play()	
+	timer.start()
+
+
+func _on_timer_timeout() -> void:
+	can_shout = true
