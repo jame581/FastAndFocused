@@ -22,7 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://cdadxcbb15ev3" path="res://scenes/obstacles/obstacle_sweater.tscn" id="15_i74bn"]
 [ext_resource type="PackedScene" uid="uid://mkcb1tttmlvi" path="res://scenes/ui/betting_panel_ui.tscn" id="19_q7ln2"]
 [ext_resource type="PackedScene" uid="uid://csfwx48sasflj" path="res://scenes/ui/result_panel_ui.tscn" id="20_api6y"]
-[ext_resource type="PackedScene" path="res://scenes/ui/game_over_panel.tscn" id="21_45se3"]
+[ext_resource type="PackedScene" uid="uid://be4lvn5mnwys8" path="res://scenes/ui/game_over_panel.tscn" id="21_45se3"]
 [ext_resource type="PackedScene" uid="uid://dt3x2a377eaym" path="res://scenes/ui/save_animal_ui.tscn" id="21_i74bn"]
 [ext_resource type="Texture2D" uid="uid://btohaa1xqqhgl" path="res://assets/sprites/spritesheets/Crowd-Sheet.png" id="21_r5g81"]
 

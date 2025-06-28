@@ -68,16 +68,27 @@ alignment = 2
 [node name="StartRaceButton" type="Button" parent="HBoxContainer/ButtonsContainer"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../BetButton")
+focus_next = NodePath("../BetButton")
+focus_previous = NodePath("../ShoutButton")
 theme = ExtResource("2_c0jjy")
 text = "Start Race"
 
 [node name="BetButton" type="Button" parent="HBoxContainer/ButtonsContainer"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../StartRaceButton")
+focus_neighbor_bottom = NodePath("../ShoutButton")
+focus_next = NodePath("../ShoutButton")
+focus_previous = NodePath("../StartRaceButton")
 theme = ExtResource("2_c0jjy")
 text = "Place Bet"
 
 [node name="ShoutButton" type="Button" parent="HBoxContainer/ButtonsContainer"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../BetButton")
+focus_neighbor_right = NodePath("../../CameraSwitchContainer/HBoxContainer/Animal1Button")
+focus_next = NodePath("../../CameraSwitchContainer/HBoxContainer/Animal1Button")
+focus_previous = NodePath("../BetButton")
 theme = ExtResource("2_c0jjy")
 text = "Shout!"
 
@@ -96,6 +107,10 @@ theme_override_constants/separation = 10
 
 [node name="Animal1Button" type="Button" parent="HBoxContainer/CameraSwitchContainer/HBoxContainer"]
 layout_mode = 2
+focus_neighbor_left = NodePath("../../../ButtonsContainer/ShoutButton")
+focus_neighbor_right = NodePath("../Animal2Button")
+focus_next = NodePath("../Animal2Button")
+focus_previous = NodePath("../../../ButtonsContainer/ShoutButton")
 theme = ExtResource("2_c0jjy")
 shortcut = SubResource("Shortcut_c0jjy")
 icon = ExtResource("3_x2gyh")
@@ -103,6 +118,10 @@ icon_alignment = 1
 
 [node name="Animal2Button" type="Button" parent="HBoxContainer/CameraSwitchContainer/HBoxContainer"]
 layout_mode = 2
+focus_neighbor_left = NodePath("../Animal1Button")
+focus_neighbor_right = NodePath("../Animal3Button")
+focus_next = NodePath("../Animal3Button")
+focus_previous = NodePath("../Animal1Button")
 theme = ExtResource("2_c0jjy")
 shortcut = SubResource("Shortcut_n3tj2")
 icon = ExtResource("4_f2huv")
@@ -110,6 +129,10 @@ icon_alignment = 1
 
 [node name="Animal3Button" type="Button" parent="HBoxContainer/CameraSwitchContainer/HBoxContainer"]
 layout_mode = 2
+focus_neighbor_left = NodePath("../Animal2Button")
+focus_neighbor_right = NodePath("../Animal4Button")
+focus_next = NodePath("../Animal4Button")
+focus_previous = NodePath("../Animal2Button")
 theme = ExtResource("2_c0jjy")
 shortcut = SubResource("Shortcut_75s7m")
 icon = ExtResource("5_0oqbo")
@@ -117,6 +140,10 @@ icon_alignment = 1
 
 [node name="Animal4Button" type="Button" parent="HBoxContainer/CameraSwitchContainer/HBoxContainer"]
 layout_mode = 2
+focus_neighbor_left = NodePath("../Animal3Button")
+focus_neighbor_right = NodePath("../../../ButtonsContainer/StartRaceButton")
+focus_next = NodePath("../../../ButtonsContainer/StartRaceButton")
+focus_previous = NodePath("../Animal3Button")
 theme = ExtResource("2_c0jjy")
 shortcut = SubResource("Shortcut_x2gyh")
 icon = ExtResource("6_ctci6")
