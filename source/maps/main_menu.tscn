@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://df73yks3fka5u"]
+[gd_scene load_steps=4 format=3 uid="uid://df73yks3fka5u"]
 
 [ext_resource type="Script" uid="uid://c5dip531ctb3k" path="res://scripts/ui/main_menu.gd" id="1_pibn7"]
+[ext_resource type="Texture2D" uid="uid://bjcdcjxn78kbx" path="res://assets/sprites/MainMenuBackground.png" id="2_km1yj"]
 [ext_resource type="Theme" uid="uid://dbivxp4ikj2iy" path="res://resources/main_menu_style.tres" id="2_krrnc"]
 
 [node name="MainMenu" type="Control"]
@@ -19,6 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_km1yj")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -35,33 +37,30 @@ theme_override_constants/margin_bottom = 15
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+alignment = 1
 
 [node name="LeftVBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+alignment = 1
 
 [node name="RightVBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="GameTitle" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/RightVBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 6
-text = "Fast & Focused"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="MainMenuButtons" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/RightVBoxContainer"]
+custom_minimum_size = Vector2(0, 205)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 theme_override_constants/separation = 15
+alignment = 2
 
 [node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/RightVBoxContainer/MainMenuButtons"]
 custom_minimum_size = Vector2(150, 30)
@@ -81,8 +80,8 @@ text = "Quit"
 [node name="VersionLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/RightVBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(1, 1, 1, 0.454902)
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 0.717647)
 text = "v0.0"
 horizontal_alignment = 1
 vertical_alignment = 2
