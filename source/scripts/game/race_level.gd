@@ -50,6 +50,7 @@ func _ready() -> void:
 	SignalBus.race_init.connect(_handle_race_init)
 	SignalBus.spawn_race_obstacles.connect(spawn_obstacles)
 	SignalBus.race_started.connect(handle_race_started)
+	SignalBus.bet_placed.connect(handle_bet_placed)
 
 
 
@@ -147,3 +148,7 @@ func spawn_obstacles(race_stage: Constants.RaceStage) -> void:
 
 func handle_race_started() -> void:
 	spawn_obstacles(Constants.RaceStage.START)
+
+
+func handle_bet_placed(animal_id: Constants.AnimalId, bet_amount: int) -> void:
+	pass

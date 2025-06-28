@@ -18,11 +18,14 @@ extends MarginContainer
 
 var animals_lineup: Array[Constants.AnimalId] = []
 var current_animal_index: int = 0
+var closing_betting_ui: bool = false
 
 func _ready() -> void:
 	# Initialize the betting panel
 	# This panel should be hidden by default
 	# visible = false
+
+	closing_betting_ui = false
 
 	# Connect signals for betting buttons
 	first_lineup_button.pressed.connect(_on_first_lineup_button_pressed)
@@ -31,6 +34,7 @@ func _ready() -> void:
 	fourth_lineup_button.pressed.connect(_on_fourth_lineup_button_pressed)
 
 	place_bet_button.pressed.connect(place_bet)
+	animation_player.animation_finished.connect(_on_animation_finished)
 
 func set_animals_lineup(lineup: Array[Animal]) -> void:
 	# Set the animals lineup for betting
@@ -48,8 +52,15 @@ func set_animals_lineup(lineup: Array[Animal]) -> void:
 
 func show_betting_panel() -> void:
 	# Show the betting panel
+	place_bet_button.text = "Bet " + str(betting_amount) + " on ME!"
 	visible = true
+	animation_player.play("fade_in")
+	closing_betting_ui = false
 
+func hide_betting_panel() -> void:
+	# Hide the betting panel
+	closing_betting_ui = true
+	animation_player.play_backwards("fade_in")
 
 func switch_animal(animal_index: int) -> void:
 	# Switch the animal in the betting panel
@@ -64,8 +75,9 @@ func switch_animal(animal_index: int) -> void:
 	animal_icon_texture_rect.texture = animal_data["icon"]
 
 func place_bet() -> void:
-	# Place a bet on the currently selected animal
-	pass
+	SignalBus.bet_placed.emit(animals_lineup[current_animal_index], betting_amount)
+	hide_betting_panel()
+	
 
 func _on_first_lineup_button_pressed() -> void:
 	switch_animal(0)
@@ -110,8 +122,12 @@ func generate_odds() -> void:
 
 
 func _on_close_button_pressed() -> void:
-	visible = false
+	hide_betting_panel()
 
 
 func _on_bet_button_pressed() -> void:
 	print("Bet button pressed")
+
+func _on_animation_finished(_anim_name: String) -> void:
+	if closing_betting_ui:
+		visible = false
