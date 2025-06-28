@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://df73yks3fka5u"]
+[gd_scene load_steps=5 format=3 uid="uid://df73yks3fka5u"]
 
 [ext_resource type="Script" uid="uid://c5dip531ctb3k" path="res://scripts/ui/main_menu.gd" id="1_pibn7"]
 [ext_resource type="Texture2D" uid="uid://bjcdcjxn78kbx" path="res://assets/sprites/MainMenuBackground.png" id="2_km1yj"]
 [ext_resource type="Theme" uid="uid://dbivxp4ikj2iy" path="res://resources/main_menu_style.tres" id="2_krrnc"]
+[ext_resource type="PackedScene" uid="uid://bl2jcndwq33jr" path="res://scenes/ui/credits_ui.tscn" id="4_bneil"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -85,3 +86,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 0.717647)
 text = "v0.0"
 horizontal_alignment = 1
 vertical_alignment = 2
+
+[node name="CreditsUI" parent="." instance=ExtResource("4_bneil")]
+layout_mode = 0
+anchors_preset = 0
