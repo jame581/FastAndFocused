@@ -204,14 +204,14 @@ _data = {
 
 [node name="Goat" instance=ExtResource("1_842g4")]
 id = 2
-speed_array = Array[float]([95.0, 90.0, 80.0])
+speed_array = Array[float]([100.0, 90.0, 80.0])
 obstacle_effect_dict = {
 1: -5.0,
 2: 5.0,
-3: -15.0,
-4: -10.0,
+3: -20.0,
+4: -15.0,
 5: -10.0,
-6: -35.0
+6: -30.0
 }
 
 [node name="Sprite2D" parent="." index="1"]

@@ -10,6 +10,7 @@ func _ready():
 	SignalBus.race_finished.connect(handle_race_finished)
 	SignalBus.map_loaded.connect(handle_map_changed)
 	SignalBus.animal_triggered_obstacle.connect(handle_animal_trigger)
+	SignalBus.game_over.connect(handle_game_over)
 	
 func handle_map_changed(mapEnum: Constants.GameScenes) -> void:
 	if mapEnum == Constants.GameScenes.MAIN_MENU:
@@ -25,7 +26,7 @@ func handle_race_started() -> void:
 	$RaceBackground.play()
 	
 func handle_race_finished(animal_finish_order) -> void:
-	$CrowdAudio.stop()
+	$CrowdAudio.volume_db = -10
 	$RaceBackground.stop()
 	$RaceWin.play()
 	
@@ -81,3 +82,6 @@ func play_shout() -> void:
 
 func _on_timer_timeout() -> void:
 	can_shout = true
+	
+func handle_game_over() -> void:
+	$GameOver.play()
