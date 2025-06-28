@@ -260,5 +260,4 @@ libraries = {
 &"": SubResource("AnimationLibrary_rw4rw")
 }
 
-[connection signal="pressed" from="BettingPanel/MarginContainer/root/RightPanel/MarginContainer3/Panel/NextButton" to="." method="_on_next_button_pressed"]
 [connection signal="pressed" from="BettingPanel/MarginContainer/root/RightPanel/MarginContainer4/Panel/BuyAnimalButton" to="." method="_on_next_button_pressed"]
