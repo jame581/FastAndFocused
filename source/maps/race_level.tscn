@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://cdbkg4q3myof1"]
+[gd_scene load_steps=30 format=4 uid="uid://cdbkg4q3myof1"]
 
 [ext_resource type="Script" uid="uid://drnanpfm6g4lr" path="res://scripts/game/race_level.gd" id="1_0cdes"]
 [ext_resource type="TileSet" uid="uid://bawc2msg3cb35" path="res://resources/race_tileset.tres" id="1_x16n8"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://cdadxcbb15ev3" path="res://scenes/obstacles/obstacle_sweater.tscn" id="15_i74bn"]
 [ext_resource type="PackedScene" uid="uid://mkcb1tttmlvi" path="res://scenes/ui/betting_panel_ui.tscn" id="19_q7ln2"]
 [ext_resource type="PackedScene" uid="uid://csfwx48sasflj" path="res://scenes/ui/result_panel_ui.tscn" id="20_api6y"]
+[ext_resource type="PackedScene" uid="uid://be4lvn5mnwys8" path="res://scenes/ui/game_over_panel.tscn" id="21_45se3"]
 [ext_resource type="Texture2D" uid="uid://btohaa1xqqhgl" path="res://assets/sprites/spritesheets/Crowd-Sheet.png" id="21_r5g81"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q7ln2"]
@@ -123,6 +124,8 @@ size_flags_horizontal = 4
 [node name="BettingUI" parent="UI" instance=ExtResource("19_q7ln2")]
 
 [node name="ResultUI" parent="UI" instance=ExtResource("20_api6y")]
+
+[node name="GameOverUI" parent="UI" instance=ExtResource("21_45se3")]
 
 [node name="FinishgLevelTrigger" parent="." instance=ExtResource("6_7ccno")]
 position = Vector2(1885, 84)

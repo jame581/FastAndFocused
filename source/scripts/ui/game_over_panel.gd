@@ -22,6 +22,10 @@ func show_game_over_panel() -> void:
 	animation_player.play("fade_in")
 	update_data()
 
+func hide_game_over_panel() -> void:
+	# Hide the game over panel
+	animation_player.play("fade_out")
+
 
 func update_data() -> void:
 	# Update the game over panel with relevant data from GameManager

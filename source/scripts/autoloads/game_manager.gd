@@ -28,6 +28,7 @@ func can_afford_animal(animal_id: Constants.AnimalId) -> bool:
 
 func _handle_bet_placed(animal_id: Constants.AnimalId, bet_amount: int):
 	if cash < bet_amount:
+		SignalBus.game_over.emit()
 		return
 	
 	last_bet_animal_id = animal_id

@@ -14,6 +14,7 @@ extends Node2D
 @onready var betting_ui: MarginContainer = $UI/BettingUI
 @onready var results_ui: MarginContainer = $UI/ResultUI
 @onready var race_control_ui: MarginContainer = $UI/RaceControlUI
+@onready var game_over_panel: MarginContainer = $UI/GameOverUI
 
 # Local variables
 var start_points: Array[Node2D]
@@ -62,6 +63,7 @@ func _ui_init() -> void:
 	# Initialize the UI elements
 	betting_ui.visible = false
 	results_ui.visible = false
+	game_over_panel.visible = false
 
 	betting_ui.set_animals_lineup(animal_array)
 
