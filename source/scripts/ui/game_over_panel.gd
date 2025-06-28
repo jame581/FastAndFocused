@@ -39,7 +39,7 @@ func update_data() -> void:
 	
 	var killed_text = "[color=\"red\"]Killed animals:"
 	for animal in killed_animals:
-		killed_text += "\n- " + animal
+		killed_text += "\n- " + str(animal)
 	killed_text += "[/color]"
 	
 	animals_result_label.text = saved_text + "\n" + killed_text

@@ -62,8 +62,15 @@ func _on_animation_finished(_anim_name: String) -> void:
 
 func _on_next_button_pressed():
 	hide_panel()
-	SceneChanger.goto_scene(Constants.GameScenes.RACE)
+	if	GameManager.number_of_out_of_race_animals() <= 4:
+		SceneChanger.goto_scene(Constants.GameScenes.RACE)
+	else:
+		SignalBus.game_over.emit()
 	
 func _on_buy_animal_button_pressed():
 	buy_animal_button.disabled = true
 	SignalBus.animal_saved.emit(last_animal_id)
+	if	GameManager.number_of_out_of_race_animals() <= 4:
+		SceneChanger.goto_scene(Constants.GameScenes.RACE)
+	else:
+		SignalBus.game_over.emit()

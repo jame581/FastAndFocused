@@ -22,6 +22,9 @@ func is_animal_unsaved(animal_id: Constants.AnimalId) -> bool:
 func can_animal_race(animal_id: Constants.AnimalId) -> bool:
 	return !is_animal_saved(animal_id) and !is_animal_unsaved(animal_id)
 
+func number_of_out_of_race_animals() -> int:
+	return saved_animals.size() + unsaved_animals.size()
+
 func can_afford_animal(animal_id: Constants.AnimalId) -> bool:
 	var animal_cost: int = Constants.ANIMAL_DATA[animal_id]["cost"]
 	return animal_cost <= cash
