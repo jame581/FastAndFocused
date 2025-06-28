@@ -128,7 +128,7 @@ alignment = 1
 layout_mode = 2
 text = "1."
 
-[node name="TextureRect" type="TextureRect" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/Result1/HBoxContainer"]
+[node name="FirstPlaceTextureRect" type="TextureRect" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/Result1/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -163,7 +163,7 @@ alignment = 1
 layout_mode = 2
 text = "2."
 
-[node name="TextureRect" type="TextureRect" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/Result2/HBoxContainer"]
+[node name="SecondPlaceTextureRect" type="TextureRect" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/Result2/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -198,7 +198,7 @@ alignment = 1
 layout_mode = 2
 text = "3."
 
-[node name="TextureRect" type="TextureRect" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/Result3/HBoxContainer"]
+[node name="ThirdPlaceTextureRect" type="TextureRect" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/Result3/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -233,7 +233,7 @@ alignment = 1
 layout_mode = 2
 text = "4."
 
-[node name="TextureRect" type="TextureRect" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/Result4/HBoxContainer"]
+[node name="FourthPlaceTextureRect" type="TextureRect" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/Result4/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -316,7 +316,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxLine_4dja5")
 
-[node name="Button" type="Button" parent="BettingPanel/MarginContainer/root/RightPanel/MarginContainer3/MarginContainer3/Panel"]
+[node name="NextButton" type="Button" parent="BettingPanel/MarginContainer/root/RightPanel/MarginContainer3/MarginContainer3/Panel"]
 custom_minimum_size = Vector2(100, 40)
 layout_mode = 1
 anchors_preset = 13
@@ -349,3 +349,5 @@ horizontal_alignment = 1
 libraries = {
 &"": SubResource("AnimationLibrary_rw4rw")
 }
+
+[connection signal="pressed" from="BettingPanel/MarginContainer/root/RightPanel/MarginContainer3/MarginContainer3/Panel/NextButton" to="." method="_on_next_button_pressed"]

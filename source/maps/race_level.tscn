@@ -104,6 +104,17 @@ position = Vector2(15, 208)
 [node name="UI" type="CanvasLayer" parent="."]
 layer = 128
 
+[node name="MoneyUI" parent="UI" instance=ExtResource("5_57tpj")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -111.0
+offset_right = 111.0
+offset_bottom = 141.0
+grow_vertical = 1
+size_flags_horizontal = 4
+
 [node name="HBoxContainer" type="HBoxContainer" parent="UI"]
 anchors_preset = 12
 anchor_top = 1.0
@@ -114,10 +125,8 @@ grow_vertical = 0
 
 [node name="RaceUI" parent="UI/HBoxContainer" node_paths=PackedStringArray("betting_ui") instance=ExtResource("4_rk0xo")]
 layout_mode = 2
+size_flags_horizontal = 0
 betting_ui = NodePath("../../BettingUI")
-
-[node name="MoneyUI" parent="UI/HBoxContainer" instance=ExtResource("5_57tpj")]
-layout_mode = 2
 
 [node name="BettingUI" parent="UI" instance=ExtResource("19_q7ln2")]
 
