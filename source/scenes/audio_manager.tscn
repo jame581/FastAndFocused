@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bsy3tqd8ie6ca"]
+[gd_scene load_steps=17 format=3 uid="uid://bsy3tqd8ie6ca"]
 
 [ext_resource type="Script" uid="uid://ccn0bm7nndfow" path="res://scripts/audio_manager.gd" id="1_liach"]
 [ext_resource type="AudioStream" uid="uid://cm035ntj86jpo" path="res://assets/audio/crowd_encouriging.mp3" id="2_3asnw"]
@@ -6,6 +6,16 @@
 [ext_resource type="AudioStream" uid="uid://bom7l873vc2cv" path="res://assets/audio/crowd_cheering_win.mp3" id="4_m6ggh"]
 [ext_resource type="AudioStream" uid="uid://v4ran2eqp47i" path="res://assets/audio/race_start.mp3" id="4_njtn3"]
 [ext_resource type="AudioStream" uid="uid://b77vi05xd6auf" path="res://assets/audio/game_lose.mp3" id="5_aoitu"]
+[ext_resource type="AudioStream" uid="uid://deh0is0avlakp" path="res://assets/audio/dog.mp3" id="7_oucy0"]
+[ext_resource type="AudioStream" uid="uid://cbnm5l634jst7" path="res://assets/audio/bober.mp3" id="8_cuol6"]
+[ext_resource type="AudioStream" uid="uid://bhnt7ltlr2if0" path="res://assets/audio/bober2.mp3" id="9_m1k83"]
+[ext_resource type="AudioStream" uid="uid://do1nqiccaf2yl" path="res://assets/audio/goat.mp3" id="10_oummu"]
+[ext_resource type="AudioStream" uid="uid://dhfvlnj5infs2" path="res://assets/audio/goat2.mp3" id="11_hssp1"]
+[ext_resource type="AudioStream" uid="uid://7pkvnnk8as1h" path="res://assets/audio/giraffe.mp3" id="12_8b11i"]
+[ext_resource type="AudioStream" uid="uid://caecru6xqmtiy" path="res://assets/audio/kakapo.mp3" id="13_u6qdm"]
+[ext_resource type="AudioStream" uid="uid://c255genn7paex" path="res://assets/audio/helicopter.mp3" id="14_f6jxr"]
+[ext_resource type="AudioStream" uid="uid://dnvh580etw8ux" path="res://assets/audio/fish.mp3" id="15_ovaav"]
+[ext_resource type="AudioStream" uid="uid://b7t3ohdel5j8v" path="res://assets/audio/hippo.mp3" id="16_thanh"]
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_liach")
@@ -31,4 +41,44 @@ parameters/looping = true
 
 [node name="GameOver" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_aoitu")
+parameters/looping = true
+
+[node name="AnimalDog" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_oucy0")
+parameters/looping = true
+
+[node name="AnimalBobr" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_cuol6")
+parameters/looping = true
+
+[node name="AnimalBobr2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_m1k83")
+parameters/looping = true
+
+[node name="AnimalGoat" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_oummu")
+parameters/looping = true
+
+[node name="AnimalGoat2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_hssp1")
+parameters/looping = true
+
+[node name="AnimalGiraffe" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_8b11i")
+parameters/looping = true
+
+[node name="AnimalKakapo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_u6qdm")
+parameters/looping = true
+
+[node name="AnimalRat" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_f6jxr")
+parameters/looping = true
+
+[node name="AnimalFish" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_ovaav")
+parameters/looping = true
+
+[node name="AnimalHippo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_thanh")
 parameters/looping = true
