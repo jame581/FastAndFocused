@@ -39,6 +39,7 @@ func _ready() -> void:
 func _on_start_button_pressed() -> void:
 	print("Start Race button pressed")
 	SignalBus.race_started.emit()
+	start_button.release_focus()
 
 func _on_bet_button_pressed() -> void:
 	print("Bet button pressed")

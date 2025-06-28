@@ -121,6 +121,8 @@ func _handle_race_init() -> void:
 	print("Race initialized")
 
 func spawn_obstacles(race_stage: Constants.RaceStage) -> void:
+	
+	print("Spawning obstacles called for stage ", race_stage)
 	# Spawn a random obstacle at a random position
 	if obstacles.size() == 0:
 		push_error("No obstacles available to spawn")
