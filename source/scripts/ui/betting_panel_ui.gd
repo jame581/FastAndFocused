@@ -114,3 +114,7 @@ func generate_odds() -> void:
 			1: second_lineup_odds.text = str(odds)
 			2: third_lineup_odds.text = str(odds)
 			3: fourth_lineup_odds.text = str(odds)
+
+
+func _on_close_button_pressed() -> void:
+	visible = false
