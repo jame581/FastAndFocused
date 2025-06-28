@@ -12,6 +12,7 @@ extends Node2D
 @onready var obstacles_node: Node2D = $Obstacles
 @onready var camera: Camera2D = $Camera2D
 @onready var betting_ui: MarginContainer = $UI/BettingUI
+@onready var results_ui: MarginContainer = $UI/ResultUI
 
 # Local variables
 var start_points: Array[Node2D]
@@ -36,8 +37,8 @@ func _ready() -> void:
 
 	if animals_node.get_child_count() > 0:
 		target_animal = animals_node.get_child(0)
-
-	betting_ui.visible = false
+	
+	_ui_init()
 
 	SignalBus.race_init.emit()
 
@@ -46,6 +47,7 @@ func _ready() -> void:
 	
 	SignalBus.animal_finished.connect(_handle_animal_finished)
 	SignalBus.race_finished.connect(_handle_race_finished)
+	SignalBus.race_init.connect(_handle_race_init)
 	SignalBus.spawn_race_obstacles.connect(spawn_obstacles)
 	SignalBus.race_started.connect(handle_race_started)
 
@@ -56,6 +58,12 @@ func _process(_delta: float) -> void:
 	if target_animal:
 		camera.position.x = target_animal.position.x - (camera.get_viewport_rect().size.x / 2)
 
+func _ui_init() -> void:
+	# Initialize the UI elements
+	betting_ui.visible = false
+	results_ui.visible = false
+
+	betting_ui.set_animals_lineup(animal_array)
 
 func spawn_animals_to_spawn_points() -> void:
 	# Spawn animals at the start points
@@ -106,6 +114,8 @@ func _handle_animal_finished(animal: Animal):
 func _handle_race_finished(local_animal_finish_order: Array[Animal]):
 	print("race finished") #TODO: rm
 
+func _handle_race_init() -> void:
+	print("Race initialized")
 
 func spawn_obstacles(race_stage: Constants.RaceStage) -> void:
 	# Spawn a random obstacle at a random position
