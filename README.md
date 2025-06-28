@@ -26,14 +26,15 @@ That's all :)
 ## Used Assets
 
 - Used font: Awexbmp (https://nimblebeastscollective.itch.io/nb-pixel-font-bundle)
+- We used some royalty free sounds for our game, our sources was: https://pixabay.com/​, http://freesound.org/
 
 ## Author
 
 * **Jan Mesarč** - *Programmer, Game Design* - [LinkTree](https://linktr.ee/jan.mesarc)
-* **Lukáš Stříž** - *Game Design, QA*
-* **Matěj Gargula** - *Programmer, Art*
-* **Petra Kropáčková** - *Art*
-* **Tomáš Plhák** - *Game Design, Programmer*
+* **Lukáš Stříž** - *Game Design, QA* - [docgargi](https://itch.io/profile/emrysius)
+* **Matěj Gargula** - *Programmer, Art* - [docgargi](https://itch.io/profile/docgargi)
+* **Petra Kropáčková** - *Art* - [liandrry](https://itch.io/profile/liandrry)
+* **Tomáš Plhák** - *Game Design, Programmer* - [plhacko](https://plhacko.itch.io/)
 
 ## Screenshots
 ![Screenshot main menu](screenshots/main_menu_screenshot.png)
