@@ -12,6 +12,8 @@ func _ready() -> void:
 	credit_button.pressed.connect(_on_credit_button_pressed)
 	exit_button.pressed.connect(_on_exit_button_pressed)
 
+	start_button.grab_focus()
+
 	credits_ui.visible = false
 
 	if OS.has_feature("web"):

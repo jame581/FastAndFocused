@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c5dip531ctb3k" path="res://scripts/ui/main_menu.gd" id="1_pibn7"]
 [ext_resource type="Texture2D" uid="uid://bjcdcjxn78kbx" path="res://assets/sprites/MainMenuBackground.png" id="2_km1yj"]
 [ext_resource type="Theme" uid="uid://dbivxp4ikj2iy" path="res://resources/main_menu_style.tres" id="2_krrnc"]
-[ext_resource type="PackedScene" path="res://scenes/ui/credits_ui.tscn" id="4_bneil"]
+[ext_resource type="PackedScene" uid="uid://bl2jcndwq33jr" path="res://scenes/ui/credits_ui.tscn" id="4_bneil"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -66,16 +66,26 @@ alignment = 2
 [node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/RightVBoxContainer/MainMenuButtons"]
 custom_minimum_size = Vector2(150, 30)
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../CreditsButton")
+focus_next = NodePath("../CreditsButton")
+focus_previous = NodePath("../ExitButton")
 text = "Play"
 
 [node name="CreditsButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/RightVBoxContainer/MainMenuButtons"]
 custom_minimum_size = Vector2(150, 30)
 layout_mode = 2
+focus_neighbor_top = NodePath("../StartButton")
+focus_neighbor_bottom = NodePath("../ExitButton")
+focus_next = NodePath("../ExitButton")
+focus_previous = NodePath("../StartButton")
 text = "Credits"
 
 [node name="ExitButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/RightVBoxContainer/MainMenuButtons"]
 custom_minimum_size = Vector2(150, 30)
 layout_mode = 2
+focus_neighbor_top = NodePath("../CreditsButton")
+focus_next = NodePath("../StartButton")
+focus_previous = NodePath("../CreditsButton")
 text = "Quit"
 
 [node name="VersionLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/RightVBoxContainer"]
