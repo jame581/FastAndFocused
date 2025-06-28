@@ -16,6 +16,7 @@ signal race_camera_switch(animal_index: int)
 signal spawn_race_obstacles(race_stage: Constants.RaceStage)
 signal animal_triggered_obstacle(animalId: Constants.AnimalId, obstacle_enum: Constants.ObstacleEnum)
 signal bet_placed(animal_id: Constants.AnimalId, bet_amount: int)
+signal animal_saved(animal_id: Constants.AnimalId)
 
 # UI signals
 signal cash_changed(new_cash: int)

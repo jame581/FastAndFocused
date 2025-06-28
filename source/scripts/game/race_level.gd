@@ -47,7 +47,6 @@ func _ready() -> void:
 	SignalBus.race_camera_switch.connect(_on_camera_switch)	
 	
 	SignalBus.animal_finished.connect(_handle_animal_finished)
-	SignalBus.race_finished.connect(_handle_race_finished)
 	SignalBus.race_init.connect(_handle_race_init)
 	SignalBus.spawn_race_obstacles.connect(spawn_obstacles)
 	SignalBus.race_started.connect(handle_race_started)
@@ -118,9 +117,6 @@ func _handle_animal_finished(animal: Animal):
 	
 	if animal_array.size() <= animal_finish_order_array.size():
 		SignalBus.race_finished.emit(animal_finish_order_array)
-
-func _handle_race_finished(local_animal_finish_order: Array[Animal]):
-	print("race finished") #TODO: rm
 
 func _handle_race_init() -> void:
 	print("Race initialized")
