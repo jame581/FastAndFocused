@@ -204,7 +204,7 @@ _data = {
 
 [node name="Rat" instance=ExtResource("1_dwh45")]
 id = 5
-speed_array = Array[float]([95.0, 90.0, 90.0])
+speed_array = Array[float]([105.0, 100.0, 100.0])
 obstacle_effect_dict = {
 1: -15.0,
 2: 20.0,
