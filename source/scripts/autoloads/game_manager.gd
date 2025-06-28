@@ -6,6 +6,8 @@ extends Node
 var saved_animals: Array[Constants.AnimalId]
 var unsaved_animals: Array[Constants.AnimalId]
 
+var last_bet_animal_id: Constants.AnimalId
+
 func _ready() -> void:
 	SignalBus.bet_placed.connect(_handle_bet_placed)
 	SignalBus.race_finished.connect(_handle_race_finished)
@@ -23,7 +25,9 @@ func can_animal_race(animal_id: Constants.AnimalId) -> bool:
 func _handle_bet_placed(animal_id: Constants.AnimalId, bet_amount: int):
 	if cash < bet_amount:
 		return
-		
+	
+	last_bet_animal_id = animal_id
+
 	if bets.has(animal_id):
 		bets[animal_id] += bet_amount
 	else:
@@ -48,3 +52,6 @@ func _handle_animal_saved(animal_id: Constants.AnimalId):
 	unsaved_animals.filter(func(item): return item != animal_id) # remove animal_id from unsafed animals
 	if	!saved_animals.has(animal_id):
 		saved_animals.append(animal_id)
+
+func get_cash() -> int:
+	return cash

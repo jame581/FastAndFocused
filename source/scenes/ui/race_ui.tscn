@@ -57,12 +57,13 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 6
 theme_override_constants/separation = 25
-alignment = 1
+alignment = 2
 
 [node name="ButtonsContainer" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/separation = 10
+alignment = 2
 
 [node name="StartRaceButton" type="Button" parent="HBoxContainer/ButtonsContainer"]
 custom_minimum_size = Vector2(100, 0)
@@ -116,5 +117,21 @@ shortcut = SubResource("Shortcut_x2gyh")
 icon = ExtResource("6_ctci6")
 icon_alignment = 1
 
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+text = "Your bet:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="YourBetTexture" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_x2gyh")

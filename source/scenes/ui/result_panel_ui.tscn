@@ -23,6 +23,21 @@ texture = ExtResource("3_mirml")
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_yt5if"]
 thickness = 0
 
+[sub_resource type="Animation" id="Animation_rw4rw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_t6wor"]
 resource_name = "fade_in"
 length = 0.5
@@ -37,21 +52,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_rw4rw"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rw4rw"]
@@ -236,7 +236,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 10
+theme_override_constants/margin_left = 0
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
@@ -247,6 +247,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("8_mm6bb")
+stretch_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="BettingPanel/MarginContainer/root/RightPanel/MarginContainer3"]
 layout_mode = 2
@@ -260,23 +261,22 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxLine_4dja5")
 
-[node name="Label" type="Label" parent="BettingPanel/MarginContainer/root/RightPanel/MarginContainer3/MarginContainer/Panel"]
+[node name="ResultLabel" type="RichTextLabel" parent="BettingPanel/MarginContainer/root/RightPanel/MarginContainer3/MarginContainer/Panel"]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -69.0
-offset_top = -16.0
-offset_right = 69.0
-offset_bottom = 16.0
+anchor_bottom = 1.0
+offset_left = -79.5
+offset_top = -23.0
+offset_right = 79.5
 grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxLine_yt5if")
-text = "WINNER!"
+grow_vertical = 0
+bbcode_enabled = true
+text = "[color=\"red\"]You lost money! Cash remain: 350[/color]"
+fit_content = true
+horizontal_alignment = 1
 
 [node name="MarginContainer3" type="MarginContainer" parent="BettingPanel/MarginContainer/root/RightPanel/MarginContainer3"]
 layout_mode = 2
@@ -314,6 +314,13 @@ theme_override_constants/margin_top = 25
 
 [node name="VBoxContainer" type="VBoxContainer" parent="BettingPanel/MarginContainer/root/RightPanel/MarginContainer3/MarginContainer2"]
 layout_mode = 2
+
+[node name="Label" type="Label" parent="BettingPanel/MarginContainer/root/RightPanel/MarginContainer3/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxLine_yt5if")
+text = "WINNER!"
 
 [node name="WinnerNameLabel" type="Label" parent="BettingPanel/MarginContainer/root/RightPanel/MarginContainer3/MarginContainer2/VBoxContainer"]
 layout_mode = 2
