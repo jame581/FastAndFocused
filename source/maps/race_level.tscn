@@ -111,26 +111,18 @@ anchor_right = 0.5
 anchor_bottom = 0.0
 offset_left = -111.0
 offset_right = 111.0
-offset_bottom = 141.0
+offset_bottom = 32.0
 grow_vertical = 1
 size_flags_horizontal = 4
-
-[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="RaceUI" parent="UI/HBoxContainer" node_paths=PackedStringArray("betting_ui") instance=ExtResource("4_rk0xo")]
-layout_mode = 2
-size_flags_horizontal = 0
-betting_ui = NodePath("../../BettingUI")
 
 [node name="BettingUI" parent="UI" instance=ExtResource("19_q7ln2")]
 
 [node name="ResultUI" parent="UI" instance=ExtResource("20_api6y")]
+
+[node name="RaceControlUI" parent="UI" node_paths=PackedStringArray("betting_ui") instance=ExtResource("4_rk0xo")]
+size_flags_horizontal = 0
+size_flags_vertical = 8
+betting_ui = NodePath("../BettingUI")
 
 [node name="FinishgLevelTrigger" parent="." instance=ExtResource("6_7ccno")]
 position = Vector2(1885, 84)

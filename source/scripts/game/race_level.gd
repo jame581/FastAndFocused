@@ -13,6 +13,7 @@ extends Node2D
 @onready var camera: Camera2D = $Camera2D
 @onready var betting_ui: MarginContainer = $UI/BettingUI
 @onready var results_ui: MarginContainer = $UI/ResultUI
+@onready var race_control_ui: MarginContainer = $UI/RaceControlUI
 
 # Local variables
 var start_points: Array[Node2D]
@@ -95,6 +96,12 @@ func spawn_animals_to_spawn_points() -> void:
 		animals_node.add_child(animal_instance)
 		animal_array.append(animal_instance)
 	
+	var animals_ids: Array[Constants.AnimalId] = []
+	for animal in animal_array:
+		animals_ids.append(animal.id)
+
+	race_control_ui.setup_switch_camera_icons(animals_ids)
+
 
 func _on_camera_switch(animal_index: int) -> void:
 	# Switch camera to the specified animal

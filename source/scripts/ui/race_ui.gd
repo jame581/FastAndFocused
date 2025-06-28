@@ -31,6 +31,7 @@ func _ready() -> void:
 	
 	# Connect signals from SignalBus
 	SignalBus.bet_placed.connect(handle_bet_placed)
+	SignalBus.race_init.connect(handle_race_init)
 
 
 func _on_start_button_pressed() -> void:
@@ -62,3 +63,17 @@ func _on_camera_switch_4_pressed() -> void:
 func handle_bet_placed(animal_id: Constants.AnimalId, bet_amount: int) -> void:
 	print("Bet placed on animal: " + str(animal_id) + " with amount: " + str(bet_amount))
 	set_ready_to_start(true)
+
+func handle_race_init() -> void:
+	print("Race initialized")
+
+func setup_switch_camera_icons(animal_ids: Array[Constants.AnimalId]) -> void:
+	# This function can be used to set up the camera switch icons based on the animal IDs
+	# For now, we will just print the animal IDs
+	print("Setting up camera switch icons for animals: " + str(animal_ids))
+	
+	# Example of setting up icons (assuming you have a method to get icon by animal ID)
+	camera_switch_1.icon = Constants.ANIMAL_DATA[animal_ids[0]]["icon"]
+	camera_switch_2.icon = Constants.ANIMAL_DATA[animal_ids[1]]["icon"]
+	camera_switch_3.icon = Constants.ANIMAL_DATA[animal_ids[2]]["icon"]
+	camera_switch_4.icon = Constants.ANIMAL_DATA[animal_ids[3]]["icon"]

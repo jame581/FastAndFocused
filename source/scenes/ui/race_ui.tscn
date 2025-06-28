@@ -1,6 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://dt472oed537f2"]
+[gd_scene load_steps=15 format=3 uid="uid://dt472oed537f2"]
 
 [ext_resource type="Script" uid="uid://bhimsfnru32fe" path="res://scripts/ui/race_ui.gd" id="1_5wmyy"]
+[ext_resource type="Theme" uid="uid://dbivxp4ikj2iy" path="res://resources/main_menu_style.tres" id="2_c0jjy"]
+[ext_resource type="Texture2D" uid="uid://dhck1kstep5ij" path="res://assets/sprites/UI/Animals_UI1.png" id="3_x2gyh"]
+[ext_resource type="Texture2D" uid="uid://ou0v5jgj6kxl" path="res://assets/sprites/UI/Animals_UI2.png" id="4_f2huv"]
+[ext_resource type="Texture2D" uid="uid://df8nea6fxt3ot" path="res://assets/sprites/UI/Animals_UI3.png" id="5_0oqbo"]
+[ext_resource type="Texture2D" uid="uid://b0jwg2k4ghf0a" path="res://assets/sprites/UI/Animals_UI4.png" id="6_ctci6"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_5wmyy"]
 device = -1
@@ -35,15 +40,16 @@ unicode = 52
 events = [SubResource("InputEventKey_kxtid")]
 
 [node name="RaceUI" type="MarginContainer"]
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = 2
+anchor_top = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 25
-theme_override_constants/margin_top = 25
-theme_override_constants/margin_right = 25
-theme_override_constants/margin_bottom = 25
+offset_top = -141.0
+offset_right = 486.0
+grow_vertical = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 script = ExtResource("1_5wmyy")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
@@ -59,11 +65,14 @@ size_flags_vertical = 4
 theme_override_constants/separation = 10
 
 [node name="StartRaceButton" type="Button" parent="HBoxContainer/ButtonsContainer"]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
+theme = ExtResource("2_c0jjy")
 text = "Start Race"
 
 [node name="BetButton" type="Button" parent="HBoxContainer/ButtonsContainer"]
 layout_mode = 2
+theme = ExtResource("2_c0jjy")
 text = "Place Bet"
 
 [node name="CameraSwitchContainer" type="VBoxContainer" parent="HBoxContainer"]
@@ -77,27 +86,35 @@ vertical_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/CameraSwitchContainer"]
 layout_mode = 2
+theme_override_constants/separation = 10
 
 [node name="Animal1Button" type="Button" parent="HBoxContainer/CameraSwitchContainer/HBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_c0jjy")
 shortcut = SubResource("Shortcut_c0jjy")
-text = "1"
+icon = ExtResource("3_x2gyh")
+icon_alignment = 1
 
 [node name="Animal2Button" type="Button" parent="HBoxContainer/CameraSwitchContainer/HBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_c0jjy")
 shortcut = SubResource("Shortcut_n3tj2")
-text = "2"
+icon = ExtResource("4_f2huv")
+icon_alignment = 1
 
 [node name="Animal3Button" type="Button" parent="HBoxContainer/CameraSwitchContainer/HBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_c0jjy")
 shortcut = SubResource("Shortcut_75s7m")
-text = "3"
+icon = ExtResource("5_0oqbo")
+icon_alignment = 1
 
 [node name="Animal4Button" type="Button" parent="HBoxContainer/CameraSwitchContainer/HBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_c0jjy")
 shortcut = SubResource("Shortcut_x2gyh")
-text = "4
-"
+icon = ExtResource("6_ctci6")
+icon_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
