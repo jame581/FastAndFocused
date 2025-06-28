@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bsy3tqd8ie6ca"]
+[gd_scene load_steps=19 format=3 uid="uid://bsy3tqd8ie6ca"]
 
 [ext_resource type="Script" uid="uid://ccn0bm7nndfow" path="res://scripts/audio_manager.gd" id="1_liach"]
 [ext_resource type="AudioStream" uid="uid://cm035ntj86jpo" path="res://assets/audio/crowd_encouriging.mp3" id="2_3asnw"]
@@ -16,13 +16,14 @@
 [ext_resource type="AudioStream" uid="uid://c255genn7paex" path="res://assets/audio/helicopter.mp3" id="14_f6jxr"]
 [ext_resource type="AudioStream" uid="uid://dnvh580etw8ux" path="res://assets/audio/fish.mp3" id="15_ovaav"]
 [ext_resource type="AudioStream" uid="uid://b7t3ohdel5j8v" path="res://assets/audio/hippo.mp3" id="16_thanh"]
+[ext_resource type="AudioStream" uid="uid://bf5fmnj4uu1op" path="res://assets/audio/shout1.mp3" id="17_m1k83"]
+[ext_resource type="AudioStream" uid="uid://bmhyo8fe4di7u" path="res://assets/audio/shout2.mp3" id="18_oummu"]
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_liach")
 
 [node name="MainMenu" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_3asnw")
-volume_db = -3.339
 autoplay = true
 
 [node name="CrowdAudio" type="AudioStreamPlayer" parent="."]
@@ -81,4 +82,12 @@ parameters/looping = true
 
 [node name="AnimalHippo" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_thanh")
+parameters/looping = true
+
+[node name="Shout1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_m1k83")
+parameters/looping = true
+
+[node name="Shout2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_oummu")
 parameters/looping = true
