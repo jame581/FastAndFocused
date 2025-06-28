@@ -259,7 +259,6 @@ theme_override_constants/margin_bottom = 40
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxLine_4dja5")
 
 [node name="ResultLabel" type="RichTextLabel" parent="BettingPanel/MarginContainer/root/RightPanel/MarginContainer3/MarginContainer/Panel"]
 layout_mode = 1

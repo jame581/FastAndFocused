@@ -5,6 +5,7 @@ extends MarginContainer
 
 @onready var start_button: Button = $HBoxContainer/ButtonsContainer/StartRaceButton
 @onready var bet_button: Button = $HBoxContainer/ButtonsContainer/BetButton
+@onready var shout_button: Button = $HBoxContainer/ButtonsContainer/ShoutButton
 @onready var your_bet_texture: TextureRect = $HBoxContainer/VBoxContainer/YourBetTexture
 
 @onready var camera_switch_1: Button = $HBoxContainer/CameraSwitchContainer/HBoxContainer/Animal1Button
@@ -22,7 +23,8 @@ func _ready() -> void:
 	# Connect button signals
 	start_button.pressed.connect(_on_start_button_pressed)
 	bet_button.pressed.connect(_on_bet_button_pressed)
-	
+	shout_button.pressed.connect(_on_shout_button_pressed)
+
 	# Connect camera switch signals
 	camera_switch_1.pressed.connect(_on_camera_switch_1_pressed)
 	camera_switch_2.pressed.connect(_on_camera_switch_2_pressed)
@@ -82,3 +84,7 @@ func setup_switch_camera_icons(animal_ids: Array[Constants.AnimalId]) -> void:
 	camera_switch_2.icon = Constants.ANIMAL_DATA[animal_ids[1]]["icon"]
 	camera_switch_3.icon = Constants.ANIMAL_DATA[animal_ids[2]]["icon"]
 	camera_switch_4.icon = Constants.ANIMAL_DATA[animal_ids[3]]["icon"]
+
+
+func _on_shout_button_pressed() -> void:
+	AudioManager.play_shout()
