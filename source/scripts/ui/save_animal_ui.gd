@@ -22,7 +22,6 @@ func _ready() -> void:
 	animation_player.animation_finished.connect(_on_animation_finished)
 	
 	SignalBus.race_finished.connect(_on_race_finished)
-	SignalBus.cash_changed.connect(_on_cash_changed)
 	next_button.pressed.connect(_on_next_button_pressed)
 	buy_animal_button.pressed.connect(_on_buy_animal_button_pressed)
 	
@@ -42,7 +41,7 @@ func _on_race_finished(animal_finish_order: Array[Animal]) -> void:
 	looser_name_label.text = Constants.ANIMAL_DATA[last_animal_id]["name"]
 	looser_fate_text_label.text = Constants.ANIMAL_DATA[last_animal_id]["fate"]
 	looser_icon_texture.texture = Constants.ANIMAL_DATA[last_animal_id]["icon"]
-	cash_labels.text = "[color=\"black\"]Cash: " + str(GameManager.get_cash()) + "[/color]"
+	cash_labels.text = "[color=\"black\"]Cost: " + str(Constants.ANIMAL_DATA[last_animal_id]["cost"]) + "[/color]"
 
 func show_panel() -> void:
 	# Show the betting panel
@@ -68,6 +67,3 @@ func _on_next_button_pressed():
 func _on_buy_animal_button_pressed():
 	buy_animal_button.disabled = true
 	SignalBus.animal_saved.emit(last_animal_id)
-
-func _on_cash_changed(cash: int):
-	cash_labels.text = "[color=\"black\"]Cash: " + str(cash) + "[/color]"
