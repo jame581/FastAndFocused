@@ -8,6 +8,10 @@ extends MarginContainer
 @onready var looser_icon_texture: Label = $BettingPanel/MarginContainer/root/LeftPanel/MarginContainer3/WinnerTextureRect
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
+@onready var next_button: Button = $BettingPanel/MarginContainer/root/RightPanel/MarginContainer3/Panel/NextButton
+@onready var buy_animal_button: Button = $BettingPanel/MarginContainer/root/RightPanel/MarginContainer4/Panel/BuyAnimalButton
+
+
 var closing_betting_ui: bool = false
 var last_animal_id: Constants.AnimalId
 
@@ -18,7 +22,10 @@ func _ready() -> void:
 	animation_player.animation_finished.connect(_on_animation_finished)
 	
 	SignalBus.race_finished.connect(_on_race_finished)
-
+	next_button.pressed.connect(_on_next_button_pressed)
+	buy_animal_button.pressed.connect(_on_buy_animal_button_pressed)
+	
+	buy_animal_button.disabled = !GameManager.can_afford_animal(last_animal_id)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -52,3 +59,11 @@ func hide_panel() -> void:
 func _on_animation_finished(_anim_name: String) -> void:
 	if closing_betting_ui:
 		visible = false
+
+func _on_next_button_pressed():
+	hide_panel()
+	SceneChanger.goto_scene(Constants.GameScenes.RACE)
+	
+func _on_buy_animal_button_pressed():
+	buy_animal_button.disabled = true
+	SignalBus.animal_saved.emit(last_animal_id)

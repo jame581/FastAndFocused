@@ -211,7 +211,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxLine_4dja5")
 
-[node name="NextButton" type="Button" parent="BettingPanel/MarginContainer/root/RightPanel/MarginContainer4/Panel"]
+[node name="BuyAnimalButton" type="Button" parent="BettingPanel/MarginContainer/root/RightPanel/MarginContainer4/Panel"]
 custom_minimum_size = Vector2(100, 40)
 layout_mode = 1
 anchors_preset = 13
@@ -277,4 +277,4 @@ libraries = {
 }
 
 [connection signal="pressed" from="BettingPanel/MarginContainer/root/RightPanel/MarginContainer3/Panel/NextButton" to="." method="_on_next_button_pressed"]
-[connection signal="pressed" from="BettingPanel/MarginContainer/root/RightPanel/MarginContainer4/Panel/NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="BettingPanel/MarginContainer/root/RightPanel/MarginContainer4/Panel/BuyAnimalButton" to="." method="_on_next_button_pressed"]

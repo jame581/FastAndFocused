@@ -22,6 +22,10 @@ func is_animal_unsaved(animal_id: Constants.AnimalId) -> bool:
 func can_animal_race(animal_id: Constants.AnimalId) -> bool:
 	return !is_animal_saved(animal_id) and !is_animal_unsaved(animal_id)
 
+func can_afford_animal(animal_id: Constants.AnimalId) -> bool:
+	var animal_cost: int = Constants.ANIMAL_DATA[animal_id]["cost"]
+	return animal_cost <= cash
+
 func _handle_bet_placed(animal_id: Constants.AnimalId, bet_amount: int):
 	if cash < bet_amount:
 		return
@@ -49,9 +53,14 @@ func _handle_race_finished(animal_finish_order: Array[Animal]):
 		SignalBus.game_over.emit()
 
 func _handle_animal_saved(animal_id: Constants.AnimalId):
-	unsaved_animals.filter(func(item): return item != animal_id) # remove animal_id from unsafed animals
+	var animal_cost: int = Constants.ANIMAL_DATA[animal_id]["cost"]
+	if	animal_cost > cash:
+		return
 	if	!saved_animals.has(animal_id):
+		unsaved_animals.filter(func(item): return item != animal_id) # remove animal_id from unsafed animals
 		saved_animals.append(animal_id)
+		cash -= animal_cost
+		SignalBus.cash_changed.emit(cash)
 
 func get_cash() -> int:
 	return cash
