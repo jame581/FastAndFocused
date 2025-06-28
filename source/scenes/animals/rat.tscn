@@ -204,6 +204,15 @@ _data = {
 
 [node name="Rat" instance=ExtResource("1_dwh45")]
 id = 5
+speed_array = Array[float]([85.0, 85.0, 85.0])
+obstacle_effect_dict = {
+1: -10.0,
+2: 10.0,
+3: -20.0,
+4: -10.0,
+5: 5.0,
+6: -5.0
+}
 
 [node name="Sprite2D" parent="." index="1"]
 offset = Vector2(0, 0)

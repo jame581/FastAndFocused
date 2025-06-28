@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://bsy3tqd8ie6ca"]
+[gd_scene load_steps=23 format=3 uid="uid://bsy3tqd8ie6ca"]
 
 [ext_resource type="Script" uid="uid://ccn0bm7nndfow" path="res://scripts/audio_manager.gd" id="1_liach"]
 [ext_resource type="AudioStream" uid="uid://cm035ntj86jpo" path="res://assets/audio/crowd_encouriging.mp3" id="2_3asnw"]
 [ext_resource type="AudioStream" uid="uid://bt7xmjtwidjql" path="res://assets/audio/main_menu.mp3" id="3_3asnw"]
 [ext_resource type="AudioStream" uid="uid://bom7l873vc2cv" path="res://assets/audio/crowd_cheering_win.mp3" id="4_m6ggh"]
 [ext_resource type="AudioStream" uid="uid://v4ran2eqp47i" path="res://assets/audio/race_start.mp3" id="4_njtn3"]
+[ext_resource type="AudioStream" uid="uid://djw3bp27de5h5" path="res://assets/audio/gunfire.mp3" id="4_u6qdm"]
 [ext_resource type="AudioStream" uid="uid://b77vi05xd6auf" path="res://assets/audio/game_lose.mp3" id="5_aoitu"]
 [ext_resource type="AudioStream" uid="uid://deh0is0avlakp" path="res://assets/audio/dog.mp3" id="7_oucy0"]
 [ext_resource type="AudioStream" uid="uid://cbnm5l634jst7" path="res://assets/audio/bober.mp3" id="8_cuol6"]
@@ -18,6 +19,9 @@
 [ext_resource type="AudioStream" uid="uid://b7t3ohdel5j8v" path="res://assets/audio/hippo.mp3" id="16_thanh"]
 [ext_resource type="AudioStream" uid="uid://bf5fmnj4uu1op" path="res://assets/audio/shout1.mp3" id="17_m1k83"]
 [ext_resource type="AudioStream" uid="uid://bmhyo8fe4di7u" path="res://assets/audio/shout2.mp3" id="18_oummu"]
+[ext_resource type="AudioStream" uid="uid://dsit5vgk7faw7" path="res://assets/audio/shout3.mp3" id="20_f6jxr"]
+[ext_resource type="AudioStream" uid="uid://d3irbq0kvij11" path="res://assets/audio/shout4_fish.mp3" id="21_ovaav"]
+[ext_resource type="AudioStream" uid="uid://8t1thgeurvsp" path="res://assets/audio/shout5.mp3" id="22_thanh"]
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_liach")
@@ -25,11 +29,15 @@ script = ExtResource("1_liach")
 [node name="MainMenu" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_3asnw")
 autoplay = true
+parameters/looping = true
 
 [node name="CrowdAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_3asnw")
 volume_db = -3.0
 parameters/looping = true
+
+[node name="Gunfire" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_u6qdm")
 
 [node name="RaceBackground" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_njtn3")
@@ -46,48 +54,45 @@ parameters/looping = true
 
 [node name="AnimalDog" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_oucy0")
-parameters/looping = true
 
 [node name="AnimalBobr" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_cuol6")
-parameters/looping = true
 
 [node name="AnimalBobr2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_m1k83")
-parameters/looping = true
 
 [node name="AnimalGoat" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_oummu")
-parameters/looping = true
 
 [node name="AnimalGoat2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_hssp1")
-parameters/looping = true
 
 [node name="AnimalGiraffe" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_8b11i")
-parameters/looping = true
 
 [node name="AnimalKakapo" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_u6qdm")
-parameters/looping = true
 
 [node name="AnimalRat" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_f6jxr")
-parameters/looping = true
 
 [node name="AnimalFish" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_ovaav")
-parameters/looping = true
 
 [node name="AnimalHippo" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_thanh")
-parameters/looping = true
 
 [node name="Shout1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_m1k83")
-parameters/looping = true
 
 [node name="Shout2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_oummu")
-parameters/looping = true
+
+[node name="Shout3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_f6jxr")
+
+[node name="Shout4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_ovaav")
+
+[node name="Shout5" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_thanh")

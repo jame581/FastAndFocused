@@ -17,6 +17,7 @@ func handle_map_changed(mapEnum: Constants.GameScenes) -> void:
 
 func handle_race_started() -> void:
 	$CrowdAudio.volume_db = +6
+	$Gunfire.play()
 	$RaceBackground.play()
 	
 func handle_race_finished(animal_finish_order) -> void:
@@ -56,10 +57,13 @@ func handle_animal_trigger (animalId: Constants.AnimalId, obstacle_enum: Constan
 
 #	$Button.pressed.connect(_on_Button_pressed)
 
-#func _on_Button_pressed(mapEnum: Constants.GameScenes):
+#func _on_Button_pressed(mapEnum: Constants.GameScenes, ):
 #	var shouts = [
 #		$Shout1,
-#		$Shout2
+#		$Shout2,
+#		$Shout3,
+#		$Shout4,
+#		$Shout5
 #	]
 #
 #	var index = randi() % shouts.size()
