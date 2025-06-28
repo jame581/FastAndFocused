@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bndkgd0wx2vwa"]
 
 [ext_resource type="Script" uid="uid://cgsngbun5b55q" path="res://scripts/game/finishg_race_trigger.gd" id="1_vrm06"]
-[ext_resource type="Texture2D" uid="uid://mk371vahuurm" path="res://icon.svg" id="2_xynts"]
+[ext_resource type="Texture2D" uid="uid://q4tjkq4y2t6e" path="res://assets/sprites/FlagFinish.png" id="2_xynts"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rbqvt"]
 size = Vector2(20, 184)
@@ -14,5 +14,5 @@ position = Vector2(0, 82)
 shape = SubResource("RectangleShape2D_rbqvt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.15, 0.15)
+scale = Vector2(1.25, 1.25)
 texture = ExtResource("2_xynts")
