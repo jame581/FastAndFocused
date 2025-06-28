@@ -3,11 +3,16 @@ Fast &amp; Focused is a morally challenging 2D racing game. Game was created for
 
 ## Game description
 
-TBA
+Autistic Animal Race Association is on its last leg and is on the edge of filing bankruptcy and is forced to slowly sell off all of their animals thus digging itself deeper and deeper. The only way to save as much of the animals as possible, you need to make some real money and quick. Fortunately, the betting markets are still in full swing and open for business.
+
+The animals are not at all normal, they have their own, … ehm, personalities. So their response to some certain things may differ, so keep that in mind when placing your bets. Will you save some animals? become filthy rich or lose it all on red? The race track awaits.
 
 ### Controls
 
-TBA
+Keyboard
+- Mouse for	UI interaction
+- Switch camera by 1, 2, 3, 4
+- Shout by spacebar
 
 ### Prerequisites
 
@@ -31,4 +36,7 @@ That's all :)
 * **Tomáš Plhák** - *Game Design, Programmer*
 
 ## Screenshots
-TBA
+![Screenshot main menu](screenshots/main_menu_screenshot.png)
+![Screenshot race](screenshots/race_1_screenshot.png)
+![Screenshot bet menu](screenshots/race_bet_screenshot.png)
+![Screenshot race init](screenshots/race_init_screenshot.png)
