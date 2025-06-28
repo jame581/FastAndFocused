@@ -76,6 +76,11 @@ layout_mode = 2
 theme = ExtResource("2_c0jjy")
 text = "Place Bet"
 
+[node name="ShoutButton" type="Button" parent="HBoxContainer/ButtonsContainer"]
+layout_mode = 2
+theme = ExtResource("2_c0jjy")
+text = "Shout!"
+
 [node name="CameraSwitchContainer" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 
