@@ -15,14 +15,14 @@ const MAPS = {
 }
 
 const ANIMAL_DATA = {
-	AnimalId.DOG:    { "name": "Dog",     "icon": "uid://dhck1kstep5ij" },
-	AnimalId.BEAVER: { "name": "Beaver",  "icon": "uid://ou0v5jgj6kxl" },
-	AnimalId.GOAT:   { "name": "Goat",    "icon": "uid://df8nea6fxt3ot" },
-	AnimalId.GIRAFFE:{ "name": "Giraffe", "icon": "uid://b0jwg2k4ghf0a" },
-	AnimalId.KAKAPO: { "name": "Kakapo",  "icon": "uid://ptlloynhxaso" },
-	AnimalId.RAT:    { "name": "Rat",     "icon": "uid://3ndqmve4wjom" },
-	AnimalId.FISH:   { "name": "Fish",    "icon": "uid://cikat3coqaarj" },
-	AnimalId.HIPPO:  { "name": "Hippo",   "icon": "uid://bjf7bro2bkwxg" },
+	AnimalId.DOG:    { "name": "Dog",     "icon": preload("uid://dhck1kstep5ij") },
+	AnimalId.BEAVER: { "name": "Beaver",  "icon": preload("uid://ou0v5jgj6kxl") },
+	AnimalId.GOAT:   { "name": "Goat",    "icon": preload("uid://df8nea6fxt3ot") },
+	AnimalId.GIRAFFE:{ "name": "Giraffe", "icon": preload("uid://b0jwg2k4ghf0a") },
+	AnimalId.KAKAPO: { "name": "Kakapo",  "icon": preload("uid://ptlloynhxaso") },
+	AnimalId.RAT:    { "name": "Rat",     "icon": preload("uid://3ndqmve4wjom") },
+	AnimalId.FISH:   { "name": "Fish",    "icon": preload("uid://cikat3coqaarj") },
+	AnimalId.HIPPO:  { "name": "Hippo",   "icon": preload("uid://bjf7bro2bkwxg") },
 }
 
 enum AnimalId {

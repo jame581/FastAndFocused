@@ -203,6 +203,7 @@ _data = {
 }
 
 [node name="Goat" instance=ExtResource("1_842g4")]
+id = 2
 
 [node name="Sprite2D" parent="." index="1"]
 offset = Vector2(0, 0)
