@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://csfwx48sasflj"]
+[gd_scene load_steps=17 format=3 uid="uid://csfwx48sasflj"]
 
 [ext_resource type="Script" uid="uid://dk4c7ky66xuqs" path="res://scripts/ui/result_panel_ui.gd" id="1_t6wor"]
 [ext_resource type="Texture2D" uid="uid://b2soeeuiywi1c" path="res://assets/sprites/UI/background_panel_1.png" id="3_mirml"]
@@ -23,7 +23,45 @@ texture = ExtResource("3_mirml")
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_yt5if"]
 thickness = 0
 
+[sub_resource type="Animation" id="Animation_t6wor"]
+resource_name = "fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_rw4rw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rw4rw"]
+_data = {
+&"RESET": SubResource("Animation_rw4rw"),
+&"fade_in": SubResource("Animation_t6wor")
+}
+
 [node name="ResultUI" type="MarginContainer"]
+modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -50,12 +88,12 @@ theme_override_constants/margin_bottom = 15
 [node name="root" type="HBoxContainer" parent="BettingPanel/MarginContainer"]
 layout_mode = 2
 
-[node name="left panel" type="Panel" parent="BettingPanel/MarginContainer/root"]
+[node name="LeftPanel" type="Panel" parent="BettingPanel/MarginContainer/root"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxTexture_07u0o")
 
-[node name="MarginContainer" type="MarginContainer" parent="BettingPanel/MarginContainer/root/left panel"]
+[node name="MarginContainer" type="MarginContainer" parent="BettingPanel/MarginContainer/root/LeftPanel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -67,15 +105,15 @@ theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 30
 
-[node name="left" type="VBoxContainer" parent="BettingPanel/MarginContainer/root/left panel/MarginContainer"]
+[node name="left" type="VBoxContainer" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer"]
 layout_mode = 2
 
-[node name="Result1" type="Panel" parent="BettingPanel/MarginContainer/root/left panel/MarginContainer/left"]
+[node name="Result1" type="Panel" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left"]
 custom_minimum_size = Vector2(200, 55)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_rw4rw")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BettingPanel/MarginContainer/root/left panel/MarginContainer/left/Result1"]
+[node name="HBoxContainer" type="HBoxContainer" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/Result1"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -86,35 +124,31 @@ scale = Vector2(0.8, 0.8)
 size_flags_horizontal = 0
 alignment = 1
 
-[node name="Label" type="Label" parent="BettingPanel/MarginContainer/root/left panel/MarginContainer/left/Result1/HBoxContainer"]
+[node name="FirstPlaceLabel" type="Label" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/Result1/HBoxContainer"]
 layout_mode = 2
-text = "<x.>"
+text = "1."
 
-[node name="TextureRect" type="TextureRect" parent="BettingPanel/MarginContainer/root/left panel/MarginContainer/left/Result1/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/Result1/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 texture = ExtResource("8_mm6bb")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BettingPanel/MarginContainer/root/left panel/MarginContainer/left/Result1/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/Result1/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="name" type="Label" parent="BettingPanel/MarginContainer/root/left panel/MarginContainer/left/Result1/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "Name:"
-
-[node name="name2" type="Label" parent="BettingPanel/MarginContainer/root/left panel/MarginContainer/left/Result1/HBoxContainer/VBoxContainer"]
+[node name="FirstPlaceNameLabel" type="Label" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/Result1/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "<name>"
 
-[node name="Result2" type="Panel" parent="BettingPanel/MarginContainer/root/left panel/MarginContainer/left"]
+[node name="Result2" type="Panel" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left"]
 custom_minimum_size = Vector2(200, 55)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_rw4rw")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BettingPanel/MarginContainer/root/left panel/MarginContainer/left/Result2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/Result2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -125,35 +159,31 @@ scale = Vector2(0.8, 0.8)
 size_flags_horizontal = 0
 alignment = 1
 
-[node name="Label" type="Label" parent="BettingPanel/MarginContainer/root/left panel/MarginContainer/left/Result2/HBoxContainer"]
+[node name="SecondPlaceLabel" type="Label" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/Result2/HBoxContainer"]
 layout_mode = 2
-text = "<x.>"
+text = "2."
 
-[node name="TextureRect" type="TextureRect" parent="BettingPanel/MarginContainer/root/left panel/MarginContainer/left/Result2/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/Result2/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 texture = ExtResource("9_qjk6t")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BettingPanel/MarginContainer/root/left panel/MarginContainer/left/Result2/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/Result2/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="name" type="Label" parent="BettingPanel/MarginContainer/root/left panel/MarginContainer/left/Result2/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "Name:"
-
-[node name="name2" type="Label" parent="BettingPanel/MarginContainer/root/left panel/MarginContainer/left/Result2/HBoxContainer/VBoxContainer"]
+[node name="SecondPlaceNameLabel" type="Label" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/Result2/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "<name>"
 
-[node name="Result3" type="Panel" parent="BettingPanel/MarginContainer/root/left panel/MarginContainer/left"]
+[node name="Result3" type="Panel" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left"]
 custom_minimum_size = Vector2(200, 55)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_rw4rw")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BettingPanel/MarginContainer/root/left panel/MarginContainer/left/Result3"]
+[node name="HBoxContainer" type="HBoxContainer" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/Result3"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -164,35 +194,31 @@ scale = Vector2(0.8, 0.8)
 size_flags_horizontal = 0
 alignment = 1
 
-[node name="Label" type="Label" parent="BettingPanel/MarginContainer/root/left panel/MarginContainer/left/Result3/HBoxContainer"]
+[node name="ThirdPlaceLabel" type="Label" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/Result3/HBoxContainer"]
 layout_mode = 2
-text = "<x.>"
+text = "3."
 
-[node name="TextureRect" type="TextureRect" parent="BettingPanel/MarginContainer/root/left panel/MarginContainer/left/Result3/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/Result3/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 texture = ExtResource("7_rw4rw")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BettingPanel/MarginContainer/root/left panel/MarginContainer/left/Result3/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/Result3/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="name" type="Label" parent="BettingPanel/MarginContainer/root/left panel/MarginContainer/left/Result3/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "Name:"
-
-[node name="name2" type="Label" parent="BettingPanel/MarginContainer/root/left panel/MarginContainer/left/Result3/HBoxContainer/VBoxContainer"]
+[node name="ThirdPlaceNameLabel" type="Label" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/Result3/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "<name>"
 
-[node name="Result4" type="Panel" parent="BettingPanel/MarginContainer/root/left panel/MarginContainer/left"]
+[node name="Result4" type="Panel" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left"]
 custom_minimum_size = Vector2(200, 55)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_rw4rw")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BettingPanel/MarginContainer/root/left panel/MarginContainer/left/Result4"]
+[node name="HBoxContainer" type="HBoxContainer" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/Result4"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -203,35 +229,31 @@ scale = Vector2(0.8, 0.8)
 size_flags_horizontal = 0
 alignment = 1
 
-[node name="Label" type="Label" parent="BettingPanel/MarginContainer/root/left panel/MarginContainer/left/Result4/HBoxContainer"]
+[node name="FourthPlaceLabel" type="Label" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/Result4/HBoxContainer"]
 layout_mode = 2
-text = "<x.>"
+text = "4."
 
-[node name="TextureRect" type="TextureRect" parent="BettingPanel/MarginContainer/root/left panel/MarginContainer/left/Result4/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/Result4/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 texture = ExtResource("8_6o578")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BettingPanel/MarginContainer/root/left panel/MarginContainer/left/Result4/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/Result4/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="name" type="Label" parent="BettingPanel/MarginContainer/root/left panel/MarginContainer/left/Result4/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "Name:"
-
-[node name="name2" type="Label" parent="BettingPanel/MarginContainer/root/left panel/MarginContainer/left/Result4/HBoxContainer/VBoxContainer"]
+[node name="FourthPlaceNameLabel" type="Label" parent="BettingPanel/MarginContainer/root/LeftPanel/MarginContainer/left/Result4/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "<name>"
 
-[node name="right panel" type="Panel" parent="BettingPanel/MarginContainer/root"]
+[node name="RightPanel" type="Panel" parent="BettingPanel/MarginContainer/root"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxTexture_xsydr")
 
-[node name="MarginContainer3" type="MarginContainer" parent="BettingPanel/MarginContainer/root/right panel"]
+[node name="MarginContainer3" type="MarginContainer" parent="BettingPanel/MarginContainer/root/RightPanel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -243,26 +265,26 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="TextureRect" type="TextureRect" parent="BettingPanel/MarginContainer/root/right panel/MarginContainer3"]
+[node name="WinnerTextureRect" type="TextureRect" parent="BettingPanel/MarginContainer/root/RightPanel/MarginContainer3"]
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("8_mm6bb")
 
-[node name="MarginContainer" type="MarginContainer" parent="BettingPanel/MarginContainer/root/right panel/MarginContainer3"]
+[node name="MarginContainer" type="MarginContainer" parent="BettingPanel/MarginContainer/root/RightPanel/MarginContainer3"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 theme_override_constants/margin_bottom = 40
 
-[node name="Panel" type="Panel" parent="BettingPanel/MarginContainer/root/right panel/MarginContainer3/MarginContainer"]
+[node name="Panel" type="Panel" parent="BettingPanel/MarginContainer/root/RightPanel/MarginContainer3/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxLine_4dja5")
 
-[node name="Label" type="Label" parent="BettingPanel/MarginContainer/root/right panel/MarginContainer3/MarginContainer/Panel"]
+[node name="Label" type="Label" parent="BettingPanel/MarginContainer/root/RightPanel/MarginContainer3/MarginContainer/Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -280,7 +302,7 @@ theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxLine_yt5if")
 text = "WINNER!"
 
-[node name="MarginContainer3" type="MarginContainer" parent="BettingPanel/MarginContainer/root/right panel/MarginContainer3"]
+[node name="MarginContainer3" type="MarginContainer" parent="BettingPanel/MarginContainer/root/RightPanel/MarginContainer3"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
@@ -288,13 +310,13 @@ theme_override_constants/margin_left = 0
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 5
 
-[node name="Panel" type="Panel" parent="BettingPanel/MarginContainer/root/right panel/MarginContainer3/MarginContainer3"]
+[node name="Panel" type="Panel" parent="BettingPanel/MarginContainer/root/RightPanel/MarginContainer3/MarginContainer3"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxLine_4dja5")
 
-[node name="Button" type="Button" parent="BettingPanel/MarginContainer/root/right panel/MarginContainer3/MarginContainer3/Panel"]
+[node name="Button" type="Button" parent="BettingPanel/MarginContainer/root/RightPanel/MarginContainer3/MarginContainer3/Panel"]
 custom_minimum_size = Vector2(100, 40)
 layout_mode = 1
 anchors_preset = 13
@@ -308,23 +330,22 @@ grow_vertical = 2
 theme = ExtResource("9_rw4rw")
 text = "Next"
 
-[node name="MarginContainer2" type="MarginContainer" parent="BettingPanel/MarginContainer/root/right panel/MarginContainer3"]
+[node name="MarginContainer2" type="MarginContainer" parent="BettingPanel/MarginContainer/root/RightPanel/MarginContainer3"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_constants/margin_top = 25
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BettingPanel/MarginContainer/root/right panel/MarginContainer3/MarginContainer2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="BettingPanel/MarginContainer/root/RightPanel/MarginContainer3/MarginContainer2"]
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="BettingPanel/MarginContainer/root/right panel/MarginContainer3/MarginContainer2/VBoxContainer"]
+[node name="WinnerNameLabel" type="Label" parent="BettingPanel/MarginContainer/root/RightPanel/MarginContainer3/MarginContainer2/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "<name>"
 horizontal_alignment = 1
 
-[node name="Label3" type="Label" parent="BettingPanel/MarginContainer/root/right panel/MarginContainer3/MarginContainer2/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "IS"
-horizontal_alignment = 1
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_rw4rw")
+}
